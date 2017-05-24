@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "User visits login page" do
-  it "can log in" do
+RSpec.describe "User visits new event page" do
+  it "they fill out event form" do
     user = User.create(first_name: "Hermione",
                       last_name: "Granger",
                       active: true,
@@ -13,13 +13,14 @@ RSpec.describe "User visits login page" do
     fill_in "username", with: user.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
+    click_on "Read"
+    #------------------------------------------------
+    # Unsure of classroom/school/grade dropdown setup
+    #------------------------------------------------
+    fill_in "How many kids", with: 18
+    fill_in "How many adults", with: 3
+    fill_in "How many minutes", with: 20
+    click_on "Cancel"
 
     expect(current_path).to eq(user_path(user))
-    expect(page).to have_content("Welcome, Hermione")
-    expect(page).to have_content("Read")
-    expect(page).to have_content("Profile")
-    expect(page).to have_content("Sign Out")
   end
-end
-
-
