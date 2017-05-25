@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Logged in user clicks sign out" do
+RSpec.describe "Logged in staff clicks sign out" do
   it "they successfully sign out" do
     staff = User.create(first_name: "Minerva",
                       last_name: "McGonagall",

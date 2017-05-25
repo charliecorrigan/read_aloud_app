@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Staff creates new school" do
-  it "they fill out new school form" do
+RSpec.describe "Staff deletes a volunteer" do
+  it "they delete an existing volunteer" do
     staff = User.create(first_name: "Minerva",
                       last_name: "McGonagall",
                       active: true,
@@ -16,10 +16,12 @@ RSpec.describe "Staff creates new school" do
                       password: "supersecretpassword",
                       role: 0,
                       language: 0)
+
     visit root
     fill_in "username", with: staff.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
+
     click_on "Manage"
     click_on "View All Volunteers"
     click_on "Hermione Granger"
@@ -30,3 +32,5 @@ RSpec.describe "Staff creates new school" do
     expect(page).to_not have_content("Granger")
     expect(page).to have_content("Minerva")
     expect(page).to have_content("McGonagall")
+  end
+end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Staff visits new event page" do
+RSpec.describe "Staff visits new volunteer event page" do
   it "they fill out event form" do
     school = School.create(name: "Hogwarts", address: "123 Wizard Way")
     class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
@@ -19,10 +19,12 @@ RSpec.describe "Staff visits new event page" do
                       role: 0,
                       language: 0)
     user_classroom = UserClassroom.create(user_id: volunteer.id, classroom_id: class1.id)
+
     visit root
     fill_in "username", with: staff.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
+
     click_on "Manage"
     click_on "View All Volunteers"
     click_on "Hermione Granger"
@@ -36,3 +38,4 @@ RSpec.describe "Staff visits new event page" do
     expect(current_path).to eq("/users/#{volunteer.id}/events/#{volunteer.events.last.id}")
     expect(page).to have_content("18")
   end
+end

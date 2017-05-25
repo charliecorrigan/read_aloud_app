@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User visits login page" do
+RSpec.describe "Staff visits login page" do
   it "has account and can log in" do
     staff = User.create(first_name: "Minerva",
                       last_name: "McGonagall",
@@ -66,7 +66,6 @@ RSpec.describe "User visits login page" do
     click_on "Sign In"
 
     expect(current_path).to eq(root_path)
-#------------UNSURE OF ERROR WORDING
     expect(current_path).to have_content("The username or password you entered doesn't match our records")
   end
 end

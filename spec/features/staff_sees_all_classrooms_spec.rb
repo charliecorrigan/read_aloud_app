@@ -12,10 +12,12 @@ RSpec.describe "Staff visits a school page" do
     school = School.create(name: "Hogwarts", address: "123 Wizard Way")
     class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
     class2 = school.classrooms.create(teacher_name: "Mr. Firenze", grade_level: "K", number_of_students_enrolled: 12)
+
     visit root
     fill_in "username", with: staff.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
+
     click_on "Manage"
     click_on "View Schools"
     click_on school.name
@@ -24,3 +26,4 @@ RSpec.describe "Staff visits a school page" do
     expect(page).to have_content("Prof. Snape")
     expect(page).to have_link("Mr. Firenze")
   end
+end

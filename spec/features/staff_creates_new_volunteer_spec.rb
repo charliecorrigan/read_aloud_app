@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Staff creates new school" do
-  it "they fill out new school form" do
+RSpec.describe "Staff creates new volunteer" do
+  it "they fill out new volunteer form" do
     school = School.create(name: "Hogwarts", address: "123 Wizard Way")
     class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
     staff = User.create(first_name: "Minerva",
@@ -17,7 +17,6 @@ RSpec.describe "Staff creates new school" do
     click_on "Sign In"
     click_on "Manage"
     click_on "Add Volunteer"
-
 
     fill_in "first_name", with: "Hermione"
     fill_in "last_name", with: "Granger"
@@ -38,3 +37,4 @@ RSpec.describe "Staff creates new school" do
     expect(page).to have_content("Hogwarts")
     expect(page).to have_content("Prof. Snape")
   end
+end

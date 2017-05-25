@@ -16,6 +16,7 @@ RSpec.describe "Staff deletes a classroom" do
     fill_in "username", with: user.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
+
     click_on "Manage"
     click_on "View Schools"
     click_on school.name
@@ -24,3 +25,4 @@ RSpec.describe "Staff deletes a classroom" do
     expect(current_path).to eq(school_path(school))
     expect(page).to_not have_content("Prof. Snape")
   end
+end

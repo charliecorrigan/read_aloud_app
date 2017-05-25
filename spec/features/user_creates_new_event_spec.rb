@@ -32,3 +32,4 @@ RSpec.describe "User creates a new event" do
     expect(page).to have_link "Edit"
     expect(page).to have_link "Delete"
   end
+end
