@@ -18,7 +18,7 @@ RSpec.describe "User navigates welcome page" do
     expect(current_path).to eq(new_user_event_path(user))
   end
 
-  it "they click on Profile" do
+  it "they click on History" do
     user = User.create(first_name: "Hermione",
                       last_name: "Granger",
                       active: true,
@@ -30,7 +30,7 @@ RSpec.describe "User navigates welcome page" do
     fill_in "username", with: user.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
-    click_on "Sign Out"
+    click_on "History"
 
     expect(current_path).to eq(edit_user(user))
   end
