@@ -13,7 +13,7 @@ RSpec.describe "Staff visits a school page" do
     class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
     class2 = school.classrooms.create(teacher_name: "Mr. Firenze", grade_level: "K", number_of_students_enrolled: 12)
     visit root
-    fill_in "username", with: user.username
+    fill_in "username", with: staff.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
     click_on "Manage"

@@ -10,7 +10,7 @@ RSpec.describe "Staff creates new school" do
                       role: 1,
                       language: 0)
     visit root
-    fill_in "username", with: user.username
+    fill_in "username", with: staff.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
     click_on "Manage"
