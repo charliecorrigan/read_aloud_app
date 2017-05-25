@@ -6,12 +6,11 @@ RSpec.describe "Staff creates new volunteer" do
     class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
     staff = User.create(first_name: "Minerva",
                       last_name: "McGonagall",
-                      active: true,
                       username: "mmcgonagall",
                       password: "supersecretpassword",
                       role: 1,
                       language: 0)
-    visit root
+    visit root_path
     fill_in "username", with: user.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
