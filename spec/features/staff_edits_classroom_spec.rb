@@ -11,10 +11,12 @@ RSpec.describe "Staff edits a classroom" do
                       language: 0)
     school = School.create(name: "Hogwarts", address: "123 Wizard Way")
     class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
+
     visit root
     fill_in "username", with: staff.username
     fill_in "password", with: "supersecretpassword"
     click_on "Sign In"
+
     click_on "Manage"
     click_on "View Schools"
     click_on school.name
@@ -26,3 +28,4 @@ RSpec.describe "Staff edits a classroom" do
     expect(page).to_not have_content("Prof. Snape")
     expect(page).to have_content("Horace Slughorn")
   end
+end
