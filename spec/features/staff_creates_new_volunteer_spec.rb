@@ -30,13 +30,6 @@ RSpec.describe "Staff creates new school" do
     select class1.id, :from => "classroom_select"
     click_on "Create Volunteer"
     volunteer = User.find_by(first_name: "Hermione")
-#------------------------------------------------------------
-# Not really sure what path to go to. User_path(user) is the
-# welcome page for a user. Can we nest a different user path
-# under the staff namespace? So staff_user_path(staff, user)
-# would show a staff view of a volunteer/user? And
-# staff_users_path(staff) would show all volunteers/users?
-#------------------------------------------------------------
 
     expect(current_path).to eq(staff_user_path(staff, volunteer))
     expect(page).to have_content("Hermione")
