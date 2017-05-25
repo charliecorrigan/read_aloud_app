@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Staff visits a school page" do
-  it "they see all classrooms for that school" do
+RSpec.describe "Staff edits a classroom" do
+  it "they fill out new data for existing classroom" do
     staff = User.create(first_name: "Minerva",
                       last_name: "McGonagall",
                       active: true,
@@ -19,7 +19,10 @@ RSpec.describe "Staff visits a school page" do
     click_on "View Schools"
     click_on school.name
     within(:css, 'classrooms') { click_button "Edit" }
+    fill_in "Teacher Name", with: "Horace Slughorn"
+    click_on "Update Classroom"
 
-    expect(current_path).to eq(edit_school__classroom_path(school, class1))
-    expect(page).to have_content("Prof. Snape")
+    expect(current_path).to eq(school_path(school))
+    expect(page).to_not have_content("Prof. Snape")
+    expect(page).to have_content("Horace Slughorn")
   end
