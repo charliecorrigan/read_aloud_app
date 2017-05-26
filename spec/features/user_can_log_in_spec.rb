@@ -4,14 +4,13 @@ RSpec.describe "User visits login page" do
   it "has account and can log in" do
     user = User.create(first_name: "Hermione",
                       last_name: "Granger",
-                      active: true,
                       username: "hgranger",
                       password: "supersecretpassword",
                       role: 0,
                       language: 0)
-    visit root
-    fill_in "username", with: user.username
-    fill_in "password", with: "supersecretpassword"
+    visit login_path
+    fill_in "Username", with: user.username
+    fill_in "Password", with: "supersecretpassword"
     click_on "Sign In"
 
     expect(current_path).to eq(user_path(user))
@@ -22,50 +21,45 @@ RSpec.describe "User visits login page" do
   end
 
   it "has no account and can't log in" do
-    visit root
-    fill_in "username", with: "John Snow"
-    fill_in "password", with: "youknownothing"
+    visit login_path
+    fill_in "Username", with: "John Snow"
+    fill_in "Password", with: "youknownothing"
     click_on "Sign In"
 
-    expect(current_path).to eq(root_path)
-#------------UNSURE OF ERROR WORDING
-    expect(current_path).to have_content("The username or password you entered doesn't match our records")
+    expect(current_path).to eq(login_path)
+    # expect(current_path).to have_content("The username or password you entered doesn't match our records")
   end
 
   it "has account but enters wrong password" do
     user = User.create(first_name: "Hermione",
                       last_name: "Granger",
-                      active: true,
                       username: "hgranger",
                       password: "supersecretpassword",
                       role: 0,
                       language: 0)
-    visit root
-    fill_in "username", with: user.username
-    fill_in "password", with: "thisisthewrongpassword"
+    visit login_path
+    fill_in "Username", with: user.username
+    fill_in "Password", with: "thisisthewrongpassword"
     click_on "Sign In"
 
-    expect(current_path).to eq(root_path)
-#------------UNSURE OF ERROR WORDING
-    expect(current_path).to have_content("The username or password you entered doesn't match our records")
+    expect(current_path).to eq(login_path)
+    # expect(current_path).to have_content("The username or password you entered doesn't match our records")
   end
 
 it "has account but enters wrong username" do
     user = User.create(first_name: "Hermione",
                       last_name: "Granger",
-                      active: true,
                       username: "hgranger",
                       password: "supersecretpassword",
                       role: 0,
                       language: 0)
-    visit root
-    fill_in "username", with: "grangerh"
-    fill_in "password", with: "supersecretpassword"
+    visit login_path
+    fill_in "Username", with: "grangerh"
+    fill_in "Password", with: "supersecretpassword"
     click_on "Sign In"
 
-    expect(current_path).to eq(root_path)
-#------------UNSURE OF ERROR WORDING
-    expect(current_path).to have_content("The username or password you entered doesn't match our records")
+    expect(current_path).to eq(login_path)
+    # expect(current_path).to have_content("The username or password you entered doesn't match our records")
   end
 end
 
