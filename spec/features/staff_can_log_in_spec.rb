@@ -11,9 +11,10 @@ RSpec.describe "Staff visits login page" do
     visit login_path
     fill_in "Username", with: staff.username
     fill_in "Password", with: "supersecretpassword"
-    click_on "Sign In"
+  
+    click_button "Sign in"
 
-    expect(current_path).to eq(user_path(staff))
+    expect(current_path).to eq("user/#{staff.id}")
     expect(page).to have_content("Welcome, Minerva")
     expect(page).to have_content("Read")
     expect(page).to have_content("Profile")
