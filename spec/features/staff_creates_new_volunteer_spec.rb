@@ -11,9 +11,10 @@ RSpec.describe "Staff creates new volunteer" do
                       role: 1,
                       language: 0)
     visit root_path
-    fill_in "username", with: user.username
-    fill_in "password", with: "supersecretpassword"
-    click_on "Sign In"
+    fill_in "Username", with: staff.username
+    fill_in "Password", with: "supersecretpassword"
+    click_button "Sign In"
+    expect(current_path).to eq(user_path(staff))
     click_on "Manage"
     click_on "Add Volunteer"
 
