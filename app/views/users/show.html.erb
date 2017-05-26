@@ -2,4 +2,8 @@
   Welcome, <%= current_user.first_name %>!
 <% end %>
 
-users show page
+<%= link_to "Read", new_user_event_path(current_user) %>
+<%= link_to "Profile", user_profiles_path(current_user) %>
+<%= link_to "History", user_events_path(current_user) %>
+<%= link_to "Manage", user_events_path(current_user) %>
+<%= link_to "Sign Out", logout_path, method: :delete %>
