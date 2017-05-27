@@ -1,5 +1,9 @@
 class Staff::SchoolsController < ApplicationController
 
+  def index
+    @schools = School.all
+  end
+
   def new
     @school = School.new
   end
@@ -17,6 +21,9 @@ class Staff::SchoolsController < ApplicationController
     @school = School.find(params[:id])
   end
 
+  def edit
+    @school = School.find(params[:id])
+  end
   private
 
   def school_params

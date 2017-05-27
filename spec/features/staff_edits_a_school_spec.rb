@@ -11,13 +11,13 @@ RSpec.describe "Staff edits a school" do
     school = School.create(name: "Hogwarts", address: "address unavailable")
 
     visit login_path
-    fill_in "Username", with: user.username
+    fill_in "Username", with: staff.username
     fill_in "Password", with: "supersecretpassword"
     click_on "Sign In"
 
     click_on "Manage"
-    click_on "View Schools"
-    click_button "Edit"
+    click_on "View All Schools"
+    click_on "Edit"
     fill_in "Address", with: "123 Wizard Way"
     click_on "Update School"
 
