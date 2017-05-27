@@ -1,11 +1,12 @@
 <div>
   School: <%= @school.name %><br>
   Address: <%= @school.address %><br>
+  <%= link_to "Edit School Info", edit_staff_school_path(@school) %>
 </div>
 
 <div>
   Classrooms:
-  <table>
+  <table class="classrooms">
     <% @school.classrooms.each do |classroom| %>
     <tr>
       <td><%= classroom.grade_level %></td>
@@ -18,6 +19,7 @@
           <% end %>
         </ul>
       </td>
+      <td><%= link_to "Edit", edit_staff_classroom_path(classroom) %></td>
     </tr>
     <% end %>
   </table>

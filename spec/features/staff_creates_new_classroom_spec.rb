@@ -22,7 +22,7 @@ RSpec.describe "Staff creates new classroom" do
     select "ECE", from: "classroom[grade_level]"
 
     fill_in "classroom[number_of_students_enrolled]", with: 20
-    click_on "Add classroom"
+    click_on "Create Classroom"
 
     expect(current_path).to eq(staff_school_path(school))
     expect(page).to have_content("Prof. Snape")
