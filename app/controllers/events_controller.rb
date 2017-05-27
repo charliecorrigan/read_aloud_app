@@ -6,9 +6,17 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.find(params[:user_id])
     @event = Event.new(event_params)
+    if @event.save
+      redirect_to user_event_path(@user, @event)
+    else
+      render :new
+    end
+  end
+
+  def show
+    
   end
 
   private

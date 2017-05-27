@@ -1,11 +1,9 @@
 <%= form_for([@user, @event]) do |f| %>
 
-  <% all_classrooms = @user.classrooms.map { |classroom| [classroom.teacher_name, classroom.id] } %> 
-  binding.pry
-  <%= select_tag "classroom", options_for_select(all_classrooms) %>
+  <%= f.collection_select(:user_classroom_id, @user.user_classrooms, :id, :teacher_name) %>
 
   <%= f.label :date %>
-  <%= select_date Date.today, prefix: :start_date %>
+  <%= f.date_field :date %>
 
   <%= f.label "How many kids" %>
   <%= f.text_field :kids %>

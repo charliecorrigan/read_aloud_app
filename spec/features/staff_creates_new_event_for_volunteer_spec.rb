@@ -27,15 +27,13 @@ RSpec.describe "Staff visits new volunteer event page" do
     click_on "View All Volunteers"
     click_on "Hermione Granger"
     click_on "Create New Event"
-    select "Prof. Snape", from: "classroom"
-    select "2016", from: "start_date_year"
-    select "Sep", from: "start_date_month"
-    select "30", from: "start_date_day"
+    select "Prof. Snape", from: "event[user_classroom_id]"
+    fill_in "event[date]", with: "2016-09-30"
     fill_in "event[kids]", with: 18
     fill_in "event[adults]", with: 3
     click_on "Submit"
 
-    expect(current_path).to eq("/users/#{volunteer.id}/events/#{volunteer.events.last.id}")
-    expect(page).to have_content("18")
+    event = Event.find_by(kids: 18)
+    expect(current_path).to eq(user_event_path(volunteer, event))
   end
 end
