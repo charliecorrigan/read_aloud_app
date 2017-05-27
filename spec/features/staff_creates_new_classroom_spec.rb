@@ -4,25 +4,25 @@ RSpec.describe "Staff creates new classroom" do
   it "they fill out new classroom form" do
     staff = User.create(first_name: "Minerva",
                       last_name: "McGonagall",
-                      active: true,
                       username: "mmcgonagall",
                       password: "supersecretpassword",
                       role: 1,
                       language: 0)
     school = School.create(name: "Hogwarts", address: "123 Wizard Way")
 
-    visit root
-    fill_in "username", with: staff.username
-    fill_in "password", with: "supersecretpassword"
+    visit login_path
+    fill_in "Username", with: staff.username
+    fill_in "Password", with: "supersecretpassword"
     click_on "Sign In"
     click_on "Manage"
-    click_on "View Schools"
+    click_on "View All Schools"
     click_on school.name
     click_on "Add Classroom"
-    fill_in "Teacher Name", with: "Prof. Snape"
-    fill_in "Grade Level", with: "ECE"
-    fill_in "Number of Students Enrolled", with: 20
-    click_on "Add Classroom"
+    fill_in "Teacher name", with: "Prof. Snape"
+    select "ECE", from: "classroom[grade_level]"
+
+    fill_in "classroom[number_of_students_enrolled]", with: 20
+    click_on "Add classroom"
 
     expect(current_path).to eq(school_path(school))
     expect(page).to have_content("Prof. Snape")

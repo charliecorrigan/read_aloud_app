@@ -1,0 +1,12 @@
+<%= form_for [:staff, @classroom] do |f| %>
+  <%= f.label :teacher_name %>
+  <%= f.text_field :teacher_name %>
+
+  <%= f.label :grade_level %>
+  <%= f.select :grade_level, [['ECE','ECE'],['Kindergarten','Kindergarten'],['First Grade','First Grade']] %>
+
+  <%= f.label :number_of_students_enrolled %>
+  <%= f.number_field :number_of_students_enrolled %>
+
+  <%= f.submit "Add classroom" %>
+<% end %>
