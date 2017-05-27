@@ -32,6 +32,21 @@ class EventsController < ApplicationController
     redirect_to user_events_path(@user)
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to user_event_path(@user, @event)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def event_params
