@@ -1,0 +1,24 @@
+<div>
+  School: <%= @school.name %><br>
+  Address: <%= @school.address %><br>
+</div>
+
+<div>
+  Classrooms:
+  <table>
+    <% @school.classrooms.each do |classroom| %>
+    <tr>
+      <td><%= classroom.grade %></td>
+      <td><%= classroom.teacher_name %></td>
+      <td>
+        <ul>
+          <% classroom.users.each do |user| %>
+            <li><%= "#{user.first_name} #{user.last_name}" %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <%= link_to "Add Classroom", new_staff_classroom_path %>
+</div>

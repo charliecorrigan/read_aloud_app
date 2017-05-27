@@ -1,0 +1,7 @@
+<h1>Events Log</h1>
+
+<ul>
+  <% @events.each do |event| %>
+    <li><%= link_to "#{event.date} #{event.user_classroom.teacher_name}", user_event_path(@user, event) %></li>
+  <% end %>
+</ul>

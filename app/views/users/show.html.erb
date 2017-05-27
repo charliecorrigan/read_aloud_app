@@ -1,0 +1,9 @@
+<% if current_user %>
+  Welcome, <%= current_user.first_name %>!
+<% end %>
+
+<%= link_to "Read", new_user_event_path(current_user) %>
+<%= link_to "Profile", user_profiles_path(current_user) %>
+<%= link_to "History", user_events_path(current_user) %>
+<%= link_to "Manage", staff_dashboards_path %>
+<%= link_to "Sign Out", logout_path, method: :delete %>
