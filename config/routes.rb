@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   namespace :staff do
     resources :dashboards, only: [:index]
+    resources :schools
+    resources :classrooms
   end
 
   get '/login', to: 'sessions#new'
