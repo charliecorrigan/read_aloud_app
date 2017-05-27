@@ -33,6 +33,13 @@ class Staff::SchoolsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    school = School.find(params[:id])
+    school.destroy
+    redirect_to staff_schools_path
+  end
+
   private
 
   def school_params
