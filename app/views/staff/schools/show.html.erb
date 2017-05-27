@@ -8,8 +8,9 @@
   <table>
     <% @school.classrooms.each do |classroom| %>
     <tr>
-      <td><%= classroom.grade %></td>
+      <td><%= classroom.grade_level %></td>
       <td><%= classroom.teacher_name %></td>
+      <td><%= classroom.number_of_students_enrolled %></td>
       <td>
         <ul>
           <% classroom.users.each do |user| %>

@@ -24,7 +24,7 @@ RSpec.describe "Staff creates new classroom" do
     fill_in "classroom[number_of_students_enrolled]", with: 20
     click_on "Add classroom"
 
-    expect(current_path).to eq(school_path(school))
+    expect(current_path).to eq(staff_school_path(school))
     expect(page).to have_content("Prof. Snape")
     expect(page).to have_link('Add Classroom')
   end
