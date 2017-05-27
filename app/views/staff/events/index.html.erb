@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>Event Date</th>
+    <th>Full Name</th>
+    <th>School</th>
+    <th>Teacher</th>
+    <th>Grade Level</th>
+    <th>Kids</th>
+    <th>Adults</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @events.each do |event| %>
+  <tr>
+    <td><%= event.date %></td>
+    <td><%= "#{event.user_classroom.user.first_name} #{event.user_classroom.user.last_name}" %></td>
+    <td><%= event.user_classroom.classroom.school.name %></td>
+    <td><%= event.user_classroom.teacher_name %></td>
+    <td><%= event.user_classroom.classroom.grade_level %></td>
+    <td><%= event.kids %></td>
+    <td><%= event.adults %></td>
+    <td><%= link_to "Edit", edit_staff_event_path(event) %></td>
+    <td><%= link_to "Delete", staff_event_path(event), method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
