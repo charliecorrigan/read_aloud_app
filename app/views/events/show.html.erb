@@ -2,4 +2,4 @@
 <p>Kids present: <%= @event.kids %></p>
 <p>Adults present: <%= @event.adults %></p>
 <%= link_to "Edit", edit_user_event_path(@user, @event) %>
-<%= link_to "Delete", user_events_path(@user), method: :delete %>
+<%= link_to "Delete", user_event_path(@user, @event), method: :delete %>

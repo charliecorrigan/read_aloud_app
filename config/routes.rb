@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :index, :create]
 
   resources :users do
-    resources :events, only: [:new, :index, :create, :show, :edit]
+    resources :events
     resources :profiles, only: [:index]
   end
 
