@@ -16,7 +16,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    
+    @user = User.find(params[:user_id])
+    @event = Event.find(params[:id])
   end
 
   private
