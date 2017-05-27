@@ -4,7 +4,6 @@ RSpec.describe "User sees all events" do
   it "sees all recorded events in history" do
     user = User.create(first_name: "Hermione",
                       last_name: "Granger",
-                      active: true,
                       username: "hgranger",
                       password: "supersecretpassword",
                       role: 0,
@@ -16,9 +15,9 @@ RSpec.describe "User sees all events" do
     event2 = Event.create(user_classroom_id: user_classroom.id, date: "2016-10-03", kids: 20, adults: 3)
     event3 = Event.create(user_classroom_id: user_classroom.id, date: "2016-10-10", kids: 20, adults: 3)
 
-    visit root
-    fill_in "username", with: user.username
-    fill_in "password", with: "supersecretpassword"
+    visit login_path
+    fill_in "Username", with: user.username
+    fill_in "Password", with: "supersecretpassword"
     click_on "Sign In"
     click_on "History"
 

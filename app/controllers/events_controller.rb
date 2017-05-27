@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
+    @events = @user.events.reverse
   end
 
   def destroy
