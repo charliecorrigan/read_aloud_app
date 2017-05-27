@@ -1,4 +1,7 @@
 <p>Event Date: <%= @event.date %></p>
+<p>School: <%= @event.user_classroom.classroom.school.name %></p>
+<p>Teacher: <%= @event.user_classroom.teacher_name %></p>
+<p>Grade: <%= @event.user_classroom.classroom.grade_level %></p>
 <p>Kids present: <%= @event.kids %></p>
 <p>Adults present: <%= @event.adults %></p>
 <%= link_to "Edit", edit_user_event_path(@user, @event) %>
