@@ -27,10 +27,12 @@ RSpec.describe "Staff visits new volunteer event page" do
     click_on "View All Volunteers"
     click_on "Hermione Granger"
     click_on "Create New Event"
-    select volunteer.classrooms.find(class1.id).id, from => "classrooms"
-    fill_in "Event Date", with: "2016-09-30"
-    fill_in "How many kids", with: 18
-    fill_in "How many adults", with: 3
+    select "Prof. Snape", from: "classroom"
+    select "2016", from: "start_date_year"
+    select "Sep", from: "start_date_month"
+    select "30", from: "start_date_day"
+    fill_in "event[kids]", with: 18
+    fill_in "event[adults]", with: 3
     click_on "Submit"
 
     expect(current_path).to eq("/users/#{volunteer.id}/events/#{volunteer.events.last.id}")
