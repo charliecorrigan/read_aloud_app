@@ -26,6 +26,12 @@ class Staff::ClassroomsController < ApplicationController
     end
   end
 
+  def destroy
+    @classroom = Classroom.find(params[:id])
+    school = @classroom.school
+    @classroom.destroy
+    redirect_to staff_school_path(school)
+  end
 
   private
 

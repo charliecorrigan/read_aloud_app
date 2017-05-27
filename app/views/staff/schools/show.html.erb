@@ -2,11 +2,12 @@
   School: <%= @school.name %><br>
   Address: <%= @school.address %><br>
   <%= link_to "Edit School Info", edit_staff_school_path(@school) %>
+  <%= link_to "Delete This School", staff_school_path(@school), method: :delete %>
 </div>
 
 <div>
   Classrooms:
-  <table class="classrooms">
+  <table class="classroom">
     <% @school.classrooms.each do |classroom| %>
     <tr>
       <td><%= classroom.grade_level %></td>
@@ -20,6 +21,7 @@
         </ul>
       </td>
       <td><%= link_to "Edit", edit_staff_classroom_path(classroom) %></td>
+      <td><%= link_to "Delete", staff_classroom_path(classroom), method: :delete %></td>
     </tr>
     <% end %>
   </table>

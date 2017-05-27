@@ -1,3 +1,3 @@
 class School < ApplicationRecord
-  has_many :classrooms
+  has_many :classrooms, :dependent => :destroy
 end
