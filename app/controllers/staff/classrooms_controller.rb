@@ -17,6 +17,16 @@ class Staff::ClassroomsController < ApplicationController
     @classroom = Classroom.find(params[:id])
   end
 
+  def update
+    @classroom = Classroom.find(params[:id])
+    if @classroom.update(classroom_params)
+      redirect_to staff_school_path(@classroom.school)
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def classroom_params

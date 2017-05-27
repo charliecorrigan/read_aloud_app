@@ -23,7 +23,7 @@ RSpec.describe "Staff edits a classroom" do
     fill_in "Teacher name", with: "Horace Slughorn"
     click_on "Update Classroom"
 
-    expect(current_path).to eq(school_path(school))
+    expect(current_path).to eq(staff_school_path(school))
     expect(page).to_not have_content("Prof. Snape")
     expect(page).to have_content("Horace Slughorn")
   end
