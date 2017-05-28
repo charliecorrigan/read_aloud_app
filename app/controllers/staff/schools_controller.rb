@@ -19,6 +19,7 @@ class Staff::SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
+    session[:current_school_id] = @school.id
   end
 
   def edit
