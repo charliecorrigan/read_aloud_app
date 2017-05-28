@@ -23,11 +23,11 @@ RSpec.describe "Staff edits an existing volunteer" do
     fill_in "Username", with: staff.username
     fill_in "Password", with: "supersecretpassword"
     click_on "Sign In"
-
     click_on "Manage"
     click_on "View All Volunteers"
     click_on "Hermione Granger"
     click_on "Edit Profile"
+
     fill_in "Last name", with: "Weasley"
     click_on "Submit Changes"
 
@@ -39,6 +39,6 @@ RSpec.describe "Staff edits an existing volunteer" do
     expect(page).to have_content("Hogwarts")
     expect(page).to have_content("Prof. Snape")
     expect(page).to have_content("Edit Profile")
-    expect(page).to have_content("Add School")
+    expect(page).to have_content("Select School")
   end
 end
