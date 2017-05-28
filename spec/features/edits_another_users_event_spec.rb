@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User visits new_user_event page" do
+RSpec.describe "User visits edit event page" do
   context "as admin" do
     it "they fill out event form" do
       school = School.create(name: "Hogwarts", address: "123 Wizard Way")
@@ -12,6 +12,7 @@ RSpec.describe "User visits new_user_event page" do
                         role: 0,
                         language: 0)
       user_classroom = UserClassroom.create(user_id: volunteer.id, classroom_id: class1.id)
+      event1 = Event.create(user_classroom_id: user_classroom.id, date: "2016-09-30", kids: 18, adults: 3)
       admin = User.create(first_name: "Albus",
                         last_name: "Dumbledore",
                         username: "hogwarts4life",
@@ -25,17 +26,14 @@ RSpec.describe "User visits new_user_event page" do
       click_button "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
-      click_on "Hermione Granger"
-      click_on "Create New Event"
-      select "Prof. Snape", from: "event[user_classroom_id]"
-      fill_in "event[date]", with: "2016-09-30"
-      fill_in "event[kids]", with: 18
-      fill_in "event[adults]", with: 3
+      click_on "View All Events"
+      click_on "Edit"
+      fill_in "event[kids]", with: 42
       click_on "Submit"
 
-      event = Event.find_by(kids: 18)
-      expect(current_path).to eq(user_event_path(volunteer, event))
+      expect(current_path).to eq(user_event_path(event1.user_classroom.user, event1))
+      expect(page).to have_content("Prof. Snape")
+      expect(page).to have_content("42")
     end
   end
 
@@ -43,13 +41,14 @@ RSpec.describe "User visits new_user_event page" do
     it "they fill out event form" do
       school = School.create(name: "Hogwarts", address: "123 Wizard Way")
       class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
-      other_staff = User.create(first_name: "R",
-                        last_name: "Hagrid",
-                        username: "rhagrid",
+      volunteer = User.create(first_name: "Hermione",
+                        last_name: "Granger",
+                        username: "hgranger",
                         password: "supersecretpassword",
-                        role: 1,
+                        role: 0,
                         language: 0)
       user_classroom = UserClassroom.create(user_id: volunteer.id, classroom_id: class1.id)
+      event1 = Event.create(user_classroom_id: user_classroom.id, date: "2016-09-30", kids: 18, adults: 3)
       staff = User.create(first_name: "Minerva",
                         last_name: "McGonagall",
                         username: "mmcgonagall",
@@ -63,45 +62,43 @@ RSpec.describe "User visits new_user_event page" do
       click_on "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
-      click_on "R Hagrid"
-      click_on "Create New Event"
-      select "Prof. Snape", from: "event[user_classroom_id]"
-      fill_in "event[date]", with: "2016-09-30"
-      fill_in "event[kids]", with: 18
-      fill_in "event[adults]", with: 3
+      click_on "View All Events"
+      click_on "Edit"
+      fill_in "event[kids]", with: 42
       click_on "Submit"
 
-      event = Event.find_by(kids: 18)
-      expect(current_path).to eq(user_event_path(volunteer, event))
+      expect(current_path).to eq(user_event_path(event1.user_classroom.user, event1))
+      expect(page).to have_content("Prof. Snape")
+      expect(page).to have_content("42")
     end
   end
 
   context "as volunteer" do
-    it "they cannot see the page" do
+    it "they fill out event form" do
       school = School.create(name: "Hogwarts", address: "123 Wizard Way")
       class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
-      staff = User.create(first_name: "Minerva",
-                        last_name: "McGonagall",
-                        username: "mmcgonagall",
-                        password: "supersecretpassword",
-                        role: 1,
-                        language: 0)
-      user_classroom = UserClassroom.create(user_id: staff.id, classroom_id: class1.id)
       volunteer = User.create(first_name: "Hermione",
                         last_name: "Granger",
                         username: "hgranger",
                         password: "supersecretpassword",
                         role: 0,
                         language: 0)
+      user_classroom = UserClassroom.create(user_id: volunteer.id, classroom_id: class1.id)
+      event1 = Event.create(user_classroom_id: user_classroom.id, date: "2016-09-30", kids: 18, adults: 3)
+      volunteer2 = User.create(first_name: "Draco",
+                        last_name: "Malfoy",
+                        username: "dmalfoy",
+                        password: "supersecretpassword",
+                        role: 0,
+                        language: 0)
 
       visit login_path
-      fill_in "Username", with: volunteer.username
+      fill_in "Username", with: volunteer2.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      visit new_user_event_path(staff)
-      expect(page).to_not have_content("Minerva")
+      visit edit_user_event_path(volunteer, event1)
+      expect(page).to_not have_content("18")
       expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end
