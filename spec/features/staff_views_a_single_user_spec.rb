@@ -16,6 +16,7 @@ RSpec.describe "Staff sees a user page" do
                       password: "supersecretpassword",
                       role: 0,
                       language: 0)
+    user_classroom = UserClassroom.create(user_id: volunteer.id, classroom_id: class1.id)
 
     visit login_path
     fill_in "Username", with: staff.username
@@ -25,14 +26,14 @@ RSpec.describe "Staff sees a user page" do
     click_on "Manage"
     click_on "View All Volunteers"
     click_on "Hermione Granger"
-    save_and_open_page
-    # expect(current_path).to eq(staff_user_path(staff, volunteer))
-    # expect(page).to have_content("Hermione")
-    # expect(page).to have_content("Granger")
-    # expect(page).to have_content("hgranger")
-    # expect(page).to have_content("Hogwarts")
-    # expect(page).to have_content("Prof. Snape")
-    # expect(page).to have_content("Edit Volunteer Info")
-    # expect(page).to have_content("Add School")
+
+    expect(current_path).to eq(user_profiles_path(volunteer))
+    expect(page).to have_content("Hermione")
+    expect(page).to have_content("Granger")
+    expect(page).to have_content("hgranger")
+    expect(page).to have_content("Hogwarts")
+    expect(page).to have_content("Prof. Snape")
+    expect(page).to have_content("Edit Profile")
+    expect(page).to have_content("Select School")
   end
 end
