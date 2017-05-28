@@ -4,6 +4,6 @@ class Classroom < ApplicationRecord
   validates :number_of_students_enrolled, presence: true
 
   belongs_to :school
-  has_many :user_classrooms
+  has_many :user_classrooms, :dependent => :destroy
   has_many :users, through: :user_classrooms
 end

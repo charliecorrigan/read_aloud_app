@@ -9,7 +9,7 @@ class User < ApplicationRecord
   enum role: [:volunteer, :staff, :admin]
   enum language: [:english, :spanish]
 
-  has_many :user_classrooms
+  has_many :user_classrooms, :dependent => :destroy
   has_many :classrooms, through: :user_classrooms
   has_many :events, through: :user_classrooms
 
