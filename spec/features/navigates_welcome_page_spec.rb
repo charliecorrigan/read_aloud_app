@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe "User navigates welcome page" do
   context "as admin" do
     it "they click on Read" do
-      admin = User.create(first_name: "Minerva",
-                        last_name: "McGonagall",
-                        username: "mmcgonagall",
-                        password: "supersecretpassword",
-                        role: 1,
+      admin = User.create(first_name: "Albus",
+                        last_name: "Dumbledore",
+                        username: "hogwarts4life",
+                        password: "lemondrop",
+                        role: 2,
                         language: 0)
       visit login_path
       fill_in "Username", with: admin.username
-      fill_in "Password", with: "supersecretpassword"
+      fill_in "Password", with: "lemondrop"
       click_on "Sign In"
       click_on "Read"
 
@@ -19,15 +19,15 @@ RSpec.describe "User navigates welcome page" do
     end
 
     it "they click on History" do
-      admin = User.create(first_name: "Minerva",
-                        last_name: "McGonagall",
-                        username: "mmcgonagall",
-                        password: "supersecretpassword",
-                        role: 1,
+      admin = User.create(first_name: "Albus",
+                        last_name: "Dumbledore",
+                        username: "hogwarts4life",
+                        password: "lemondrop",
+                        role: 2,
                         language: 0)
       visit login_path
       fill_in "Username", with: admin.username
-      fill_in "Password", with: "supersecretpassword"
+      fill_in "Password", with: "lemondrop"
       click_on "Sign In"
       click_on "History"
 
@@ -35,15 +35,15 @@ RSpec.describe "User navigates welcome page" do
     end
 
     it "they click on Profile" do
-      admin = User.create(first_name: "Minerva",
-                        last_name: "McGonagall",
-                        username: "mmcgonagall",
-                        password: "supersecretpassword",
-                        role: 1,
+      admin = User.create(first_name: "Albus",
+                        last_name: "Dumbledore",
+                        username: "hogwarts4life",
+                        password: "lemondrop",
+                        role: 2,
                         language: 0)
       visit login_path
       fill_in "Username", with: admin.username
-      fill_in "Password", with: "supersecretpassword"
+      fill_in "Password", with: "lemondrop"
       click_on "Sign In"
       click_on "Profile"
 
@@ -51,15 +51,15 @@ RSpec.describe "User navigates welcome page" do
     end
 
     it "they click on Manage" do
-      admin = User.create(first_name: "Minerva",
-                        last_name: "McGonagall",
-                        username: "mmcgonagall",
-                        password: "supersecretpassword",
-                        role: 1,
+      admin = User.create(first_name: "Albus",
+                        last_name: "Dumbledore",
+                        username: "hogwarts4life",
+                        password: "lemondrop",
+                        role: 2,
                         language: 0)
       visit login_path
       fill_in "Username", with: admin.username
-      fill_in "Password", with: "supersecretpassword"
+      fill_in "Password", with: "lemondrop"
       click_on "Sign In"
       click_on "Manage"
 
@@ -67,15 +67,15 @@ RSpec.describe "User navigates welcome page" do
     end
 
     it "they click on Sign Out" do
-      admin = User.create(first_name: "Minerva",
-                        last_name: "McGonagall",
-                        username: "mmcgonagall",
-                        password: "supersecretpassword",
-                        role: 1,
+      admin = User.create(first_name: "Albus",
+                        last_name: "Dumbledore",
+                        username: "hogwarts4life",
+                        password: "lemondrop",
+                        role: 2,
                         language: 0)
       visit login_path
       fill_in "Username", with: admin.username
-      fill_in "Password", with: "supersecretpassword"
+      fill_in "Password", with: "lemondrop"
       click_on "Sign In"
       click_on "Sign Out"
 
