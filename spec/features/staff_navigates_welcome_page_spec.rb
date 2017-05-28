@@ -46,7 +46,7 @@ RSpec.describe "Staff navigates through their welcome page" do
     click_on "Sign In"
     click_on "Profile"
 
-    expect(current_path).to eq(user_events_path(staff))
+    expect(current_path).to eq(user_profiles_path(staff))
   end
 
   it "they click on Manage" do
@@ -62,7 +62,7 @@ RSpec.describe "Staff navigates through their welcome page" do
     click_on "Sign In"
     click_on "Manage"
 
-    expect(current_path).to eq(login_path)
+    expect(current_path).to eq(staff_dashboards_path)
   end
 
   it "they click on Sign Out" do
