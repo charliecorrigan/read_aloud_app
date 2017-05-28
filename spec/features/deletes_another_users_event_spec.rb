@@ -91,7 +91,7 @@ RSpec.describe "User visits new event page" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      visit staff_events
+      visit staff_events_path
       expect(page).to_not have_content("18")
       expect(page).to have_content("The page you were looking for doesn't exist.")
     end

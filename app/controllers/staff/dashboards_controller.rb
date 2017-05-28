@@ -1,4 +1,4 @@
-class Staff::DashboardsController < ApplicationController
+class Staff::DashboardsController < Staff::BaseController
 
   def index
     

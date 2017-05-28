@@ -1,4 +1,4 @@
-class Staff::ClassroomsController < ApplicationController
+class Staff::ClassroomsController < Staff::BaseController
   def new
     @classroom = Classroom.new
   end

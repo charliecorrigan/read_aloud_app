@@ -49,7 +49,7 @@ RSpec.describe "User visits new_user_event page" do
                         password: "supersecretpassword",
                         role: 1,
                         language: 0)
-      user_classroom = UserClassroom.create(user_id: volunteer.id, classroom_id: class1.id)
+      user_classroom = UserClassroom.create(user_id: other_staff.id, classroom_id: class1.id)
       staff = User.create(first_name: "Minerva",
                         last_name: "McGonagall",
                         username: "mmcgonagall",
@@ -73,7 +73,7 @@ RSpec.describe "User visits new_user_event page" do
       click_on "Submit"
 
       event = Event.find_by(kids: 18)
-      expect(current_path).to eq(user_event_path(volunteer, event))
+      expect(current_path).to eq(user_event_path(other_staff, event))
     end
   end
 
