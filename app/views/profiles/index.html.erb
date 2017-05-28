@@ -8,7 +8,9 @@ Preferred Language: <%= @user.language %><br>
 <% if current_user.admin? || (current_user.staff? && @user.volunteer?) || (current_user.staff? && current_user == @user) %>
   <%= link_to "Edit Profile", edit_user_path(@user) %>
 <% end %>
+<% if current_user.admin? || (current_user.staff? && @user.volunteer?) %>
   <%= link_to "Delete Account", user_path(@user), method: :delete %>
+<% end %>
 
 <h1>Classrooms:</h1>
 <table>
