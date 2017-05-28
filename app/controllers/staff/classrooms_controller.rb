@@ -36,6 +36,6 @@ class Staff::ClassroomsController < ApplicationController
   private
 
   def classroom_params
-    params.require(:classroom).permit(:teacher_name, :grade_level, :number_of_kids_enrolled)
+    params.require(:classroom).permit(:teacher_name, :grade_level, :number_of_students_enrolled)
   end
 end
