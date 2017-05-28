@@ -20,7 +20,6 @@ RSpec.describe "Staff creates new classroom" do
     click_on "Add Classroom"
     fill_in "Teacher name", with: "Prof. Snape"
     select "ECE", from: "classroom[grade_level]"
-
     fill_in "classroom[number_of_students_enrolled]", with: 20
     click_on "Create Classroom"
 
