@@ -6,6 +6,7 @@ Username: <%= @user.username %><br>
 Position: <%= @user.role %><br>
 Preferred Language: <%= @user.language %><br>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
+<%= link_to "Delete Account", user_path(@user), method: :delete %>
 
 <h1>Classrooms:</h1>
 <table>
