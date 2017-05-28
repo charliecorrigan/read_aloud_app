@@ -1,5 +1,16 @@
 <h1>View all Users</h1>
 
-<%= @users.each do |user| %>
-  <%= link_to "#{user.first_name} #{user.last_name}", user_profiles_path(user) %>
-<% end %>
+<table>
+  <% @users.each do |user| %>
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Position</th>
+  </tr>
+  <tr>
+    <td><%= link_to "#{user.first_name} #{user.last_name}", user_profiles_path(user) %></td>
+    <td><%= user.username %></td>
+    <td><%= user.role %></td>
+  <tr>
+    <% end %>
+</table>
