@@ -16,6 +16,8 @@ RSpec.describe "Staff edits an existing volunteer" do
                       language: 0)
     school = School.create(name: "Hogwarts", address: "123 Wizard Way")
     class1 = school.classrooms.create(teacher_name: "Prof. Snape", grade_level: "ECE", number_of_students_enrolled: 20)
+    class2 = school.classrooms.create(teacher_name: "Prof. Flitwick", grade_level: "ECE", number_of_students_enrolled: 12)
+
     user_classroom = UserClassroom.create(user_id: volunteer.id, classroom_id: class1.id)
     event1 = Event.create(user_classroom_id: user_classroom.id, date: "2016-09-30", kids: 18, adults: 3)
 
@@ -27,18 +29,15 @@ RSpec.describe "Staff edits an existing volunteer" do
     click_on "Manage"
     click_on "View All Volunteers"
     click_on "Hermione Granger"
-    click_on "Edit Profile"
-    fill_in "Last name", with: "Weasley"
-    click_on "Submit Changes"
+    select "Hogwarts", from: "schools"
+    click_on "Submit"
+    select "Prof. Flitwick", from: "user_classroom[classroom_id]"
 
+    click_on "Select Classroom"
     expect(current_path).to eq(user_profiles_path(volunteer))
+    save_and_open_page
     expect(page).to have_content("Hermione")
-    expect(page).to have_content("Weasley")
-    expect(page).to_not have_content("Granger")
-    expect(page).to have_content("hgranger")
-    expect(page).to have_content("Hogwarts")
     expect(page).to have_content("Prof. Snape")
-    expect(page).to have_content("Edit Profile")
-    expect(page).to have_content("Add School")
+    expect(page).to have_content("Prof. Flitwick")
   end
 end

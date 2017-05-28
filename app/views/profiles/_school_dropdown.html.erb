@@ -1,0 +1,11 @@
+
+
+<form action="/users/<%= @user.id %>/profiles" method="get">
+<select name="schools">
+<% School.all.each do |school| %>
+  <option value="<%= school.id %>"><%= school.name %></option>
+<% end %>
+</select>
+<input type="submit" value="Submit">
+</form>
+
