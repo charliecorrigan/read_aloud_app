@@ -13,4 +13,14 @@ class ApplicationController < ActionController::Base
   def require_admin_or_staff
     render file: "/public/404" unless current_admin_or_staff?
   end
+
+  def volunteer_and_not_owner
+    if current_user.volunteer? && current_user != @user
+      render file: "/public/404"
+    end
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 end

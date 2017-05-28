@@ -31,10 +31,10 @@ RSpec.describe "User views all users" do
       expect(page).to have_content("hgranger")
       expect(page).to have_content("volunteer")
 
-      expect(page).to have_content("Minerva")
-      expect(page).to have_content("McGonagall")
-      expect(page).to have_content("mmcgonagall")
-      expect(page).to have_content("staff")
+      expect(page).to have_content("Albus")
+      expect(page).to have_content("Dumbledore")
+      expect(page).to have_content("hogwarts4life")
+      expect(page).to have_content("admin")
     end
   end
 

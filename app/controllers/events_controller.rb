@@ -45,15 +45,6 @@ class EventsController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
-  def volunteer_and_not_owner
-    if current_user.volunteer? && current_user != @user
-      render file: "/public/404"
-    end
-  end
 
   def event_params
     params.require(:event).permit(:user_classroom_id, :date, :kids, :adults)
