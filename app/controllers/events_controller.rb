@@ -1,12 +1,12 @@
 class EventsController < ApplicationController
+  before_action :set_user
+  before_action :volunteer_and_not_owner
 
   def new
-    @user = User.find(params[:user_id])
     @event = Event.new
   end
 
   def create
-    @user = User.find(params[:user_id])
     @event = Event.new(event_params)
     if @event.save
       redirect_to user_event_path(@user, @event)
@@ -16,17 +16,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
   end
 
   def index
-    @user = User.find(params[:user_id])
     @events = @user.events.order(date: :desc)
   end
 
   def destroy
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
     @event.destroy
 
@@ -34,13 +31,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
     
   end
 
   def update
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to user_event_path(@user, @event)
