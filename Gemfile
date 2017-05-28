@@ -41,6 +41,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'pry-rails'
   gem 'database_cleaner'
+  gem 'nyan-cat-formatter'
 end
 
 group :development do

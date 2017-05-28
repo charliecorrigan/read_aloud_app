@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_admin_or_staff, except: [:show]
 
   def new
     @user = User.new
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_profiles_path(@user)
     else
-      #re-render new view if validations don't pass
+      render :new
     end
   end
 
