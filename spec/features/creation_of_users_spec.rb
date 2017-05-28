@@ -25,6 +25,54 @@ RSpec.describe "User visits new user page" do
 
       expect(page).to have_content("Minerva")
     end
+
+    it "enters data for new admin user" do
+      admin = User.create(first_name: "Albus",
+                        last_name: "Dumbledore",
+                        username: "hogwarts4life",
+                        password: "lemondrop",
+                        role: 2,
+                        language: 0)
+      visit login_path
+      fill_in "Username", with: admin.username
+      fill_in "Password", with: "lemondrop"
+      click_button "Sign In"
+
+      visit new_user_path
+      fill_in "First name", with: "Aberforth"
+      fill_in "Last name", with: "Dumbledore"
+      fill_in "Username", with: "abdumbledore"
+      fill_in "Password", with: "supersecretpassword"
+      select "admin", :from => "user_role"
+      select "english", :from => "user_language"
+      click_button "Create Account"
+
+      expect(page).to have_content("Aberforth")
+    end
+
+    it "enters data for new volunteer" do
+      admin = User.create(first_name: "Albus",
+                        last_name: "Dumbledore",
+                        username: "hogwarts4life",
+                        password: "lemondrop",
+                        role: 2,
+                        language: 0)
+      visit login_path
+      fill_in "Username", with: admin.username
+      fill_in "Password", with: "lemondrop"
+      click_button "Sign In"
+
+      visit new_user_path
+      fill_in "First name", with: "Hermione"
+      fill_in "Last name", with: "Granger"
+      fill_in "Username", with: "hgranger"
+      fill_in "Password", with: "supersecretpassword"
+      select "volunteer", :from => "user_role"
+      select "english", :from => "user_language"
+      click_button "Create Account"
+
+      expect(page).to have_content("Hermione")
+    end
   end
 
   context "as staff" do
