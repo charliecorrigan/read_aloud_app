@@ -48,4 +48,20 @@ RSpec.describe "User navigates welcome page" do
 
     expect(current_path).to eq(login_path)
   end
+
+  it "can't access Manage or Profile" do
+    user = User.create(first_name: "Hermione",
+                      last_name: "Granger",
+                      username: "hgranger",
+                      password: "supersecretpassword",
+                      role: 0,
+                      language: 0)
+    visit login_path
+    fill_in "Username", with: user.username
+    fill_in "Password", with: "supersecretpassword"
+    click_on "Sign In"
+
+    expect(page).to_not have_content("Manage")
+    expect(page).to_not have_content("Profile")
+  end
 end

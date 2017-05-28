@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :dashboards, only: [:index]
     resources :schools
     resources :classrooms
+    resources :events
   end
 
   get '/login', to: 'sessions#new'
