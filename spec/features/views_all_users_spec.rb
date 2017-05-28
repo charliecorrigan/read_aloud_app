@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Staff views all users" do
+RSpec.describe "User views all users" do
   context "as admin" do
     it "they see a list of all volunteers" do
       school = School.create(name: "Hogwarts", address: "123 Wizard Way")
