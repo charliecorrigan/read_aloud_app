@@ -6,7 +6,7 @@
   <%= f.select :grade_level, [['ECE','ECE'],['Kindergarten','Kindergarten'],['First Grade','First Grade']] %>
 
   <%= f.label :number_of_students_enrolled %>
-  <%= f.number_field :number_of_students_enrolled %>
+  <%= f.number_field :number_of_students_enrolled, value: @classroom.number_of_students_enrolled ||= 17 %>
 
   <%= f.submit %>
 <% end %>

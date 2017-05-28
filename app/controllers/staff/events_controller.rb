@@ -1,4 +1,4 @@
-class Staff::EventsController < ApplicationController
+class Staff::EventsController < Staff::BaseController
 
   def index
     @events = Event.all

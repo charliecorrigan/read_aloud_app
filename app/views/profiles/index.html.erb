@@ -5,8 +5,12 @@ Username: <%= @user.username %><br>
 (link to change password)<br>
 Position: <%= @user.role %><br>
 Preferred Language: <%= @user.language %><br>
-<%= link_to "Edit Profile", edit_user_path(@user) %>
-<%= link_to "Delete Account", user_path(@user), method: :delete %>
+<% if current_user.admin? || (current_user.staff? && @user.volunteer?) || (current_user.staff? && current_user == @user) %>
+  <%= link_to "Edit Profile", edit_user_path(@user) %>
+<% end %>
+<% if current_user.admin? || (current_user.staff? && @user.volunteer?) %>
+  <%= link_to "Delete Account", user_path(@user), method: :delete %>
+<% end %>
 
 <h1>Classrooms:</h1>
 <table>
