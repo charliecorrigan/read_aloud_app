@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_admin_or_staff
-
-  def require_admin_or_staff
-    render file: "/public/404" unless current_admin_or_staff?
-  end
+  before_action :require_admin_or_staff, except: [:show]
 
   def new
     @user = User.new

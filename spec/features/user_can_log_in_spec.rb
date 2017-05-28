@@ -16,7 +16,8 @@ RSpec.describe "User visits login page" do
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("Welcome, Hermione")
     expect(page).to have_content("Read")
-    # expect(page).to have_content("Profile")
+    expect(page).to_not have_content("Profile")
+    expect(page).to_not have_content("Manage")
     expect(page).to have_content("Sign Out")
   end
 
