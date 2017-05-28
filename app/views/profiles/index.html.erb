@@ -33,7 +33,7 @@ Preferred Language: <%= @user.language %><br>
 </div>
 
 <h1>Events:</h1>
-(Link to view event history)
+<%= link_to "User Event History", user_events_path(@user) %>
 <%= link_to "Create New Event", new_user_event_path(@user) %>
 
 

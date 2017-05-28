@@ -35,7 +35,6 @@ RSpec.describe "Staff edits an existing volunteer" do
 
     click_on "Select Classroom"
     expect(current_path).to eq(user_profiles_path(volunteer))
-    save_and_open_page
     expect(page).to have_content("Hermione")
     expect(page).to have_content("Prof. Snape")
     expect(page).to have_content("Prof. Flitwick")

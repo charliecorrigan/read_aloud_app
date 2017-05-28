@@ -17,6 +17,6 @@ RSpec.describe "Admin visits new user page" do
     select "english", :from => "user_language"
     click_button "Create Account"
 
-    expect(page).to have_content("Welcome, Minerva")
+    expect(page).to have_content("Minerva")
   end
 end

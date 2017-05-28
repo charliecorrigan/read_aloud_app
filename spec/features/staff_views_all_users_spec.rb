@@ -25,7 +25,6 @@ RSpec.describe "Staff views all users" do
     click_on "Manage"
     click_on "View All Volunteers"
 
-    save_and_open_page
     expect(current_path).to eq(users_path)
     expect(page).to have_content("Hermione")
     expect(page).to have_content("Granger")

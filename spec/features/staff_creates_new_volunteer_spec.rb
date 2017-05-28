@@ -10,7 +10,7 @@ RSpec.describe "Staff creates new volunteer" do
                       password: "supersecretpassword",
                       role: 1,
                       language: 0)
-    visit root_path
+    visit login_path
     fill_in "Username", with: staff.username
     fill_in "Password", with: "supersecretpassword"
     click_button "Sign In"
@@ -18,23 +18,18 @@ RSpec.describe "Staff creates new volunteer" do
     click_on "Manage"
     click_on "Add Volunteer"
 
-    fill_in "first_name", with: "Hermione"
-    fill_in "last_name", with: "Granger"
-    fill_in "username", with: "hgranger"
-    fill_in "password", with: "verysecretpassword"
-    choose 'english' #Meant for radio button. If this doesn't work, inspect the element in tools and use element id
-    select school.id, :from => "school_select"
+    fill_in "First name", with: "Hermione"
+    fill_in "Last name", with: "Granger"
+    fill_in "Username", with: "hgranger"
+    fill_in "Password", with: "verysecretpassword"
+    select 'english', from: 'user_language'
 
-    click_on "Next"
-    select class1.id, :from => "classroom_select"
-    click_on "Create Volunteer"
+    click_on "Create Account"
     volunteer = User.find_by(first_name: "Hermione")
 
-    expect(current_path).to eq(staff_user_path(staff, volunteer))
+    expect(current_path).to eq(user_profiles_path(volunteer))
     expect(page).to have_content("Hermione")
     expect(page).to have_content("Granger")
     expect(page).to have_content("hgranger")
-    expect(page).to have_content("Hogwarts")
-    expect(page).to have_content("Prof. Snape")
   end
 end

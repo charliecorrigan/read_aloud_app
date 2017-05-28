@@ -19,7 +19,7 @@
     <td><%= event.user_classroom.classroom.grade_level %></td>
     <td><%= event.kids %></td>
     <td><%= event.adults %></td>
-    <td><%= link_to "Edit", edit_staff_event_path(event) %></td>
+    <td><%= link_to "Edit", edit_user_event_path(event.user_classroom.user, event) %></td>
     <td><%= link_to "Delete", staff_event_path(event), method: :delete %></td>
   </tr>
   <% end %>
