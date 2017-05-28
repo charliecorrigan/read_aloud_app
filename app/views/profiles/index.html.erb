@@ -1,2 +1,39 @@
+<h1>Profile</h1>
+First Name: <%= @user.first_name %><br>
+Last Name: <%= @user.last_name %><br>
+Username: <%= @user.username %><br>
+(link to change password)<br>
+Position: <%= @user.role %><br>
+Preferred Language: <%= @user.language %><br>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+<%= link_to "Delete Account", user_path(@user), method: :delete %>
 
+<h1>Classrooms:</h1>
+<table>
+<% @user.classrooms.each do |classroom| %>
+  <tr>
+    <td> <%= classroom.school.name %></td>
+    <td><%= "#{classroom.teacher_name}'s #{classroom.grade_level} class" %></td>
+    <td> <%= classroom.number_of_students_enrolled %> </td>
+  </tr>
+  <% end %>
+</table>
+<div class="assign-classroom">
+  <h2>Assign New Classroom</h2>
+  <div class="assign-classroom-school">
+    <%= render partial: "school_dropdown" %>
+  </div>
+<% if params[:schools] %>
+  <%= form_for(@user_classroom) do |f| %>
+    <%= f.collection_select(:classroom_id, School.find(params[:schools]).classrooms, :id, :teacher_name) %>
+    <span class="hidden"><%= f.number_field :user_id, :value => @user.id %></span>
+    <%= f.submit "Select Classroom" %>
+  <% end %>
+<% end %>
+</div>
+
+<h1>Events:</h1>
+(Link to view event history)
 <%= link_to "Create New Event", new_user_event_path(@user) %>
+
+
