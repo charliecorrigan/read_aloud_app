@@ -1,9 +1,11 @@
+<div class="stats-form">
 <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <span class="label"><%= f.label :username %></span>
+  <%= f.text_field :username %><br>
 
-  <%= f.label :password %>
+  <span class="label"><%= f.label :password %></span>
   <%= f.password_field :password %>
 
   <%= f.submit "Sign In" %>
 <% end %>
+</div>

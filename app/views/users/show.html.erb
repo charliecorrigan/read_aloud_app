@@ -1,6 +1,6 @@
 <div class="stuff-box">
 	<% if current_user %>
-  <div class="greeting"><h2>Welcome, <%= current_user.first_name %>!</h2><br>
+  <div class="greeting"><h2>Welcome, <%= current_user.first_name %>!</h2></div><br>
   <% end %>
   <img class="dpl-central" src="<%= image_path('dpl_central.jpg') %>">
   <%= render partial: "welcome#{current_user.role}" %>
