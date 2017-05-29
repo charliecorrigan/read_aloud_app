@@ -216,7 +216,7 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     color: white;
-    text-align: center;
+    text-align: right;
     padding: 1%;
     background-color: #81B6E3;
     border-radius: 10px;
@@ -243,6 +243,7 @@ h2 {
 }
 
 .desktop-stuff-box-right {
+  clear: left;
   width: 60%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;
@@ -289,4 +290,13 @@ select {
   text-align: right;
   color: #58585B;
   padding-right: 1%;
+}
+
+.form-value {
+  color: #58585B
+}
+
+.form-label-left a {
+  text-decoration: none;
+  color: white;
 }

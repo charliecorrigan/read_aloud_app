@@ -1,8 +1,18 @@
-<p>Event Date: <%= @event.date %></p>
-<p>School: <%= @event.user_classroom.classroom.school.name %></p>
-<p>Teacher: <%= @event.user_classroom.teacher_name %></p>
-<p>Grade: <%= @event.user_classroom.classroom.grade_level %></p>
-<p>Kids present: <%= @event.kids %></p>
-<p>Adults present: <%= @event.adults %></p>
-<%= link_to "Edit", edit_user_event_path(@user, @event) %>
-<%= link_to "Delete", user_event_path(@user, @event), method: :delete %>
+<div class="stats-form desktop-stuff-box-right">
+<p class="label">
+  <span class="form-label-left">Event Date: </span><span class="form-value"><%= @event.date %></span></p><br>
+<p class="label">
+  <span class="form-label-left">School: </span><span class="form-value"><%= @event.user_classroom.classroom.school.name %></span></p><br>
+<p class="label">
+  <span class="form-label-left">Teacher: </span><span class="form-value"><%= @event.user_classroom.teacher_name %></span></p><br>
+<p class="label">
+  <span class="form-label-left">Grade: </span><span class="form-value"><%= @event.user_classroom.classroom.grade_level %></span></p><br>
+<p class="label">
+  <span class="form-label-left">Kids present: </span><span class="form-value"><%= @event.kids %></span></p><br>
+<p class="label">
+  <span class="form-label-left">Adults present: </span><span class="form-value"><%= @event.adults %></span></p><br>
+<p class="label">
+  <span class="form-label-left"><%= link_to "Edit", edit_user_event_path(@user, @event) %></span></p><br>
+<p class="label">
+  <span class="form-label-left"><%= link_to "Delete", user_event_path(@user, @event), method: :delete %></span></p><br>
+</div>
