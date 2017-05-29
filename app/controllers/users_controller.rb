@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
+  before_action :set_user_by_id, only: [:edit, :update, :destroy]
   before_action :require_admin_or_staff, except: [:show]
+
+  def set_user_by_id
+    @user = User.find(params[:id])
+  end
 
   def new
     @user = User.new
@@ -24,11 +29,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_profiles_path(@user)
     else
@@ -37,7 +40,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
   end

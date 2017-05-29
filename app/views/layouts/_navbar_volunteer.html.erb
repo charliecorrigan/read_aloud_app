@@ -1,0 +1,9 @@
+<nav>
+  <h1>LOGO</h1>
+  <section>
+    <%= link_to "Home", user_path(current_user) %>
+    <%= link_to "Read", new_user_event_path(current_user) %>
+    <%= link_to "History", user_events_path(current_user) %>
+    <%= link_to "Sign Out", logout_path, method: :delete %>
+  </section>
+</nav>

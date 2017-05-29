@@ -25,7 +25,7 @@ RSpec.describe "User visits new_user_event page" do
       click_button "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Create New Event"
       select "Prof. Snape", from: "event[user_classroom_id]"
@@ -63,7 +63,7 @@ RSpec.describe "User visits new_user_event page" do
       click_on "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "R Hagrid"
       click_on "Create New Event"
       select "Prof. Snape", from: "event[user_classroom_id]"

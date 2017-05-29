@@ -25,7 +25,7 @@ RSpec.describe "user deletes another user" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"
 
@@ -59,7 +59,7 @@ RSpec.describe "user deletes another user" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"
 
@@ -93,7 +93,7 @@ RSpec.describe "user deletes another user" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"
 
@@ -128,7 +128,7 @@ RSpec.describe "user deletes another user" do
       click_on "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
 
       expect(current_path).to eq(user_profiles_path(other_staff))
@@ -162,7 +162,7 @@ RSpec.describe "user deletes another user" do
       click_on "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
 
       expect(current_path).to eq(user_profiles_path(admin))
@@ -195,7 +195,7 @@ RSpec.describe "user deletes another user" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"
 
