@@ -28,7 +28,7 @@ RSpec.describe "User edits an existing volunteer" do
       click_on "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
       select "Hogwarts", from: "schools"
       click_on "Submit"
@@ -69,7 +69,7 @@ RSpec.describe "User edits an existing volunteer" do
       click_on "Sign In"
 
       click_on "Manage"
-      click_on "View All Volunteers"
+      click_on "View All Users"
       click_on "Hermione Granger"
       select "Hogwarts", from: "schools"
       click_on "Submit"
