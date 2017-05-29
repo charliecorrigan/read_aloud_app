@@ -1,11 +1,13 @@
-
-
-<form action="/users/<%= @user.id %>/profiles" method="get">
-  Select School: <select name="schools">
-<% School.all.each do |school| %>
-  <option value="<%= school.id %>"><%= school.name %></option>
-<% end %>
-</select>
-<input type="submit" value="Submit">
-</form>
-
+<div class="stats-form desktop-stuff-box-right-wide">
+  <form action="/users/<%= @user.id %>/profiles" method="get">
+    <p class="label">
+      <span class="form-label-left">Select School: </span>
+      <select name="schools">
+        <% School.all.each do |school| %>
+          <option value="<%= school.id %>"><%= school.name %></option>
+        <% end %>
+      </select>
+      <span class="form-label-left"><input type="submit" value="Submit"></span>
+    </p><br>
+  </form>
+</div>
