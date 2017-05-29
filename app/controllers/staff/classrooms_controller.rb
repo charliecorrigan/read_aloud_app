@@ -1,24 +1,28 @@
 class Staff::ClassroomsController < Staff::BaseController
+  before_action :set_classroom, only: [:edit, :update, :destroy]
+
+  def set_classroom
+    @classroom = Classroom.find(params[:id])
+  end
+
   def new
     @classroom = Classroom.new
   end
 
   def create
-    school = School.find(session[:current_school_id])
-    @classroom = school.classrooms.new(classroom_params)
+    @school = School.find(session[:current_school_id])
+    @classroom = @school.classrooms.new(classroom_params)
     if @classroom.save
-      redirect_to staff_school_path(school)
+      redirect_to staff_school_path(@school)
     else
       render :new
     end
   end
 
   def edit
-    @classroom = Classroom.find(params[:id])
   end
 
   def update
-    @classroom = Classroom.find(params[:id])
     if @classroom.update(classroom_params)
       redirect_to staff_school_path(@classroom.school)
     else
@@ -27,10 +31,9 @@ class Staff::ClassroomsController < Staff::BaseController
   end
 
   def destroy
-    @classroom = Classroom.find(params[:id])
-    school = @classroom.school
+    @school = @classroom.school
     @classroom.destroy
-    redirect_to staff_school_path(school)
+    redirect_to staff_school_path(@school)
   end
 
   private
