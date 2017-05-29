@@ -2,10 +2,16 @@
 <html>
   <head>
     <title>ReadAloudApp</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: "all" %>
+    <%= stylesheet_link_tag    'mobile_stylesheet', media: "(max-width: 680px)" %>
+    <%= stylesheet_link_tag    'desktop_stylesheet', media: "(min-width: 681px)" %>
+    
     <%= javascript_include_tag 'application' %>
+
+
   </head>
 
   <body>
