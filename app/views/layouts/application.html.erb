@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if session[:user_id] %>
+      <%= render partial: "layouts/navbar_#{current_user.role}" %>
+    <% end %>
     <%= flash[:sign_in_error] %>
     <%= yield %>
   </body>
