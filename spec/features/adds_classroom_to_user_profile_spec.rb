@@ -27,8 +27,10 @@ RSpec.describe "User edits an existing volunteer" do
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
 
-      click_on "Manage"
-      click_on "View All Volunteers"
+      within(".button-list") do
+        click_on("Manage")
+      end
+      click_on "View All Users"
       click_on "Hermione Granger"
       select "Hogwarts", from: "schools"
       click_on "Submit"
@@ -68,8 +70,10 @@ RSpec.describe "User edits an existing volunteer" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Manage"
-      click_on "View All Volunteers"
+      within(".button-list") do
+        click_on("Manage")
+      end
+      click_on "View All Users"
       click_on "Hermione Granger"
       select "Hogwarts", from: "schools"
       click_on "Submit"

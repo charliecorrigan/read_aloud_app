@@ -1,43 +1,111 @@
-<h1>Profile</h1>
-First Name: <%= @user.first_name %><br>
-Last Name: <%= @user.last_name %><br>
-Username: <%= @user.username %><br>
-(link to change password)<br>
-Position: <%= @user.role %><br>
-Preferred Language: <%= @user.language %><br>
-<% if current_user.admin? || (current_user.staff? && @user.volunteer?) || (current_user.staff? && current_user == @user) %>
-  <%= link_to "Edit Profile", edit_user_path(@user) %>
-<% end %>
-<% if current_user.admin? || (current_user.staff? && @user.volunteer?) %>
-  <%= link_to "Delete Account", user_path(@user), method: :delete %>
-<% end %>
+<div class="stuff-box">
+  <h2 class="page-title">Profile</h2>
+</div>
 
-<h1>Classrooms:</h1>
-<table>
-<% @user.classrooms.each do |classroom| %>
-  <tr>
-    <td> <%= classroom.school.name %></td>
-    <td><%= "#{classroom.teacher_name}'s #{classroom.grade_level} class" %></td>
-    <td> <%= classroom.number_of_students_enrolled %> </td>
-  </tr>
+<div class="stats-form desktop-stuff-box-right">
+  <p class="label">
+    <span class="form-label-left">First Name: </span><span class="form-value"><%= @user.first_name %></span>
+  </p><br>
+  
+  <p class="label">
+    <span class="form-label-left">Last Name: </span><span class="form-value"><%= @user.last_name %></span>
+  </p><br>
+  
+  <p class="label">
+    <span class="form-label-left">Username: </span><span class="form-value"><%= @user.username %></span>
+  </p><br>
+  
+  <p class="label">
+    <span class="form-label-left">(link to change password)</span>
+  </p><br>
+
+  <p class="label">
+    <span class="form-label-left">Position: </span><span class="form-value"><%= @user.role %></span>
+  </p><br>
+
+  <p class="label">
+    <span class="form-label-left">Preferred Language: </span><span class="form-value"><%= @user.language %></span>
+  </p><br>
+
+  <% if current_user.admin? || (current_user.staff? && @user.volunteer?) || (current_user.staff? && current_user == @user) %>
+    <p class="label">
+    <span class="form-label-left"><%= link_to "Edit Profile", edit_user_path(@user) %></span></p><br>
   <% end %>
-</table>
+  <% if current_user.admin? || (current_user.staff? && @user.volunteer?) %>
+    <p class="label">
+    <span class="form-label-left"><%= link_to "Delete Account", user_path(@user), method: :delete %></span></p><br>
+  <% end %>
+</div>
+
+<div class="stuff-box">
+  <h2 class="page-title">Classrooms</h2>
+</div>
+
+<div class="desktop-stuff-box-right-wide">
+  <table>
+    <tr class="label-sm">
+      <th><span class="form-value">Number of Students Enrolled</span></th>
+      <th><span class="form-value">School</span></th>
+      <th><span class="form-value">Classroom</span></th>
+    </tr>
+  <% @user.classrooms.each do |classroom| %>
+    <tr class="label-sm">
+      <td><span class="form-value"><%= classroom.number_of_students_enrolled %></span></td>
+      <td><span class="form-value"><%= classroom.school.name %></span></td>
+      <td><span class="form-value"><%= "#{classroom.teacher_name}'s #{classroom.grade_level} class" %></span></td>
+    </tr>
+    <% end %>
+  </table><br>
+</div>
+
 <div class="assign-classroom">
-  <h2>Assign New Classroom</h2>
+  <div class="stuff-box">
+    <h2 class="page-title">Assign New Classroom</h2>
+  </div>
+
+<% if !params[:schools] %>
   <div class="assign-classroom-school">
     <%= render partial: "school_dropdown" %>
   </div>
-<% if params[:schools] %>
-  <%= form_for(@user_classroom) do |f| %>
-    <%= f.collection_select(:classroom_id, School.find(params[:schools]).classrooms, :id, :teacher_name) %>
-    <span class="hidden"><%= f.number_field :user_id, :value => @user.id %></span>
-    <%= f.submit "Select Classroom" %>
-  <% end %>
 <% end %>
+
+  <% if params[:schools] %>
+    <div class="stats-form desktop-stuff-box-right">
+      <%= form_for(@user_classroom) do |f| %>
+      <p class="label">
+        <span class="form-label-left">
+          <%= f.collection_select(:classroom_id, School.find(params[:schools]).classrooms, :id, :teacher_name) %>
+        </span>
+      </p><br>
+        <span class="hidden"><%= f.number_field :user_id, :value => @user.id %></span>
+      <p class="label">
+        <span class="form-label-left">
+          <%= f.submit "Select Classroom" %>
+        </span>
+      </p><br>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
 </div>
 
-<h1>Events:</h1>
-<%= link_to "User Event History", user_events_path(@user) %>
-<%= link_to "Create New Event", new_user_event_path(@user) %>
+<div class="stuff-box">
+  <h2 class="page-title">Events</h2>
+</div>
+
+<div class="stats-form desktop-stuff-box-right">
+  <p class="label">
+    <span class="form-label-left">
+      <%= link_to "User Event History", user_events_path(@user) %>
+    </span>
+  </p><br>
+  <p class="label">
+    <span class="form-label-left">
+      <%= link_to "Create New Event", new_user_event_path(@user) %>
+    </span>
+  </p><br><br>
+</div>
+
+
 
 

@@ -19,7 +19,7 @@ RSpec.describe "User deletes an existing event" do
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
 
-      click_on "History"
+      within(".button-list") {  click_on("History") }
       click_on "2016-09-30 Prof. Snape"
       click_on "Delete"
 
@@ -46,7 +46,7 @@ RSpec.describe "User deletes an existing event" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "History"
+      within(".button-list") {  click_on("History") }
       click_on "2016-09-30 Prof. Snape"
       click_on "Delete"
 
@@ -75,7 +75,7 @@ RSpec.describe "User deletes an existing event" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "History"
+      within(".button-list") {  click_on("History") }
       click_on "2016-09-30 Prof. Snape"
       expect(current_path).to eq(user_event_path(volunteer, event1))
 

@@ -1,9 +1,18 @@
-<%= form_for [:staff, @school] do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
+<div class="stats-form desktop-stuff-box-right">
+  <%= form_for [:staff, @school] do |f| %>
 
-<%= f.label :address %>
-<%= f.text_field :address %>
+  <p class="label">
+    <span class="form-label-left">
+    <%= f.label :name %></span>
+    <%= f.text_field :name %></p><br>
 
-<%= f.submit %>
-<% end  %>
+  <p class="label">
+    <span class="form-label-left">
+    <%= f.label :address %></span>
+    <%= f.text_field :address %></p><br>
+
+  <p class="label">
+    <span class="form-label-left">
+      <%= f.submit %></span></p><br>
+  <% end  %>
+</div>

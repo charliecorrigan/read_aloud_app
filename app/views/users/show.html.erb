@@ -1,5 +1,11 @@
-<% if current_user %>
-  Welcome, <%= current_user.first_name %>!
-<% end %>
+<div class="stuff-box">
+	<% if current_user %>
+  <h2 class="page-title">Welcome, <%= current_user.first_name %></h2><br>
+  <% end %>
+  <img class="dpl-central" src="<%= image_path('dpl_central.jpg') %>">
+  <%= render partial: "welcome#{current_user.role}" %>
+</div>
 
-<%= render partial: "welcome#{current_user.role}" %>
+
+
+

@@ -19,7 +19,7 @@ RSpec.describe "User edits an existing event" do
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
 
-      click_on "History"
+      within(".button-list") {  click_on("History") }
       click_on "2016-09-30 Prof. Snape"
       click_on "Edit"
       fill_in "event[kids]", with: 2
@@ -49,7 +49,7 @@ RSpec.describe "User edits an existing event" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "History"
+      within(".button-list") {  click_on("History") }
       click_on "2016-09-30 Prof. Snape"
       click_on "Edit"
       fill_in "event[kids]", with: 2
@@ -78,7 +78,7 @@ RSpec.describe "User edits an existing event" do
       fill_in "Username", with: volunteer.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "History"
+      within(".button-list") {  click_on("History") }
       click_on "2016-09-30 Prof. Snape"
       click_on "Edit"
       fill_in "event[kids]", with: 17

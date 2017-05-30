@@ -1,10 +1,16 @@
-<table>
-  <% @schools.each do |school| %>
-    <tr>
-      <td><%= link_to school.name, staff_school_path(school) %></td>
-      <td><%= school.address %></td>
-      <td><%= link_to "Edit", edit_staff_school_path(school) %></td>
-      <td><%= link_to "Delete", staff_school_path(school), method: :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="stuff-box">
+  <h2 class="page-title">All Schools</h2>
+</div>
+
+<div class="desktop-stuff-box-right-wide">
+  <table>
+    <% @schools.each do |school| %>
+      <tr class="label-sm">
+        <td><span class="form-value"><%= link_to school.name, staff_school_path(school) %></span></td>
+        <td><span class="form-value"><%= school.address %></span></td>
+        <td><span class="form-value"><%= link_to "Edit", edit_staff_school_path(school) %></span></td>
+        <td><span class="form-value"><%= link_to "Delete", staff_school_path(school), method: :delete %></span></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

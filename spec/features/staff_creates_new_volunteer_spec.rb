@@ -15,7 +15,10 @@ RSpec.describe "Staff creates new volunteer" do
     fill_in "Password", with: "supersecretpassword"
     click_button "Sign In"
     expect(current_path).to eq(user_path(staff))
-    click_on "Manage"
+
+    within(".button-list") do
+        click_on("Manage")
+      end
     click_on "Add Volunteer"
 
     fill_in "First name", with: "Hermione"

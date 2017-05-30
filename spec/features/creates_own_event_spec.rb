@@ -18,7 +18,7 @@ RSpec.describe "User creates a new event" do
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
 
-      click_on "Read"
+      within(".button-list") {  click_on("Read") }
       fill_in "event[date]", with: "2016-09-30"
       select "Prof. Snape", from: "event[user_classroom_id]"
       fill_in "event[kids]", with: 18
@@ -46,7 +46,7 @@ RSpec.describe "User creates a new event" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Read"
+      within(".button-list") {  click_on("Read") }
       fill_in "event[date]", with: "2016-09-30"
       select "Prof. Snape", from: "event[user_classroom_id]"
       fill_in "event[kids]", with: 18
@@ -73,7 +73,7 @@ RSpec.describe "User creates a new event" do
       fill_in "Username", with: volunteer.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Read"
+      within(".button-list") {  click_on("Read") }
 
       select "Prof. Snape", from: "event[user_classroom_id]"
       fill_in "event[date]", with: "2016-09-30"
