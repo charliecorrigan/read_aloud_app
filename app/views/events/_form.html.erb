@@ -3,21 +3,21 @@
 
   <p class="label">
   <span class="form-label-left"><%= f.label "Classroom" %></span>
-  <%= f.collection_select(:user_classroom_id, @user.user_classrooms, :id, :teacher_name) %><p><br>
+  <%= f.collection_select(:user_classroom_id, @user.user_classrooms, :id, :teacher_name) %></p><br>
 
   <p class="label">
   <%= f.label :date %>
-  <%= f.date_field :date %><p><br>
+  <%= f.date_field :date %></p><br>
 
   <p class="label">
   <%= f.label "How many kids" %>
-  <%= f.text_field :kids %><p><br>
+  <%= f.text_field :kids %></p><br>
 
   <p class="label">
   <%= f.label "How many adults" %>
-  <%= f.text_field :adults %><p><br>
+  <%= f.text_field :adults %></p><br>
 
   <p class="label">
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit" %></p><br>
 <% end %>
 </div>
