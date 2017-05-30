@@ -3,13 +3,15 @@
   <head>
     <title>ReadAloudApp</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application', media: "all" %>
+    <%= stylesheet_link_tag    'mobile_stylesheet', media: "(max-width: 680px)" %>
+    <%= stylesheet_link_tag    'desktop_stylesheet', media: "(min-width: 681px)" %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <% if session[:user_id] %>
+    <header><img class="dpl-logo_mobile" src="<%= image_path('DPL_horiz3_2color.jpg') %>"><img class="dpl-logo_desktop navbar" src="<%= image_path('DPL_horiz_2color.jpg') %>"></header>
+    <% if session[:user_id]%>
       <%= render partial: "layouts/navbar_#{current_user.role}" %>
     <% end %>
     <%= flash[:sign_in_error] %>

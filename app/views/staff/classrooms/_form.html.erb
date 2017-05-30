@@ -1,12 +1,19 @@
-<%= form_for [:staff, @classroom] do |f| %>
-  <%= f.label :teacher_name %>
-  <%= f.text_field :teacher_name %>
+<div class="stats-form desktop-stuff-box-right">
 
-  <%= f.label :grade_level %>
-  <%= f.select :grade_level, [['ECE','ECE'],['Kindergarten','Kindergarten'],['First Grade','First Grade']] %>
-
-  <%= f.label :number_of_students_enrolled %>
-  <%= f.number_field :number_of_students_enrolled, value: @classroom.number_of_students_enrolled ||= 17 %>
-
-  <%= f.submit %>
-<% end %>
+  <%= form_for [:staff, @classroom] do |f| %>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :teacher_name %></span>
+        <%= f.text_field :teacher_name %></p><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :grade_level %></span>
+        <%= f.select :grade_level, [['ECE','ECE'],['Kindergarten','Kindergarten'],['First Grade','First Grade']] %></p><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :number_of_students_enrolled %></span>
+        <%= f.number_field :number_of_students_enrolled, value: @classroom.number_of_students_enrolled ||= 17 %></p><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.submit %></span></p><br>
+  <% end %>

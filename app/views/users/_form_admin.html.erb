@@ -1,21 +1,38 @@
-<%= form_for(@user) do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %><br>
+<div class="stats-form desktop-stuff-box-right">
+  <%= form_for(@user) do |f| %>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :first_name %></span>
+        <%= f.text_field :first_name %></p><br>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :last_name %></span>
+        <%= f.text_field :last_name %></p><br>
 
-  <%= f.label :password %>
-  <%= f.text_field :password %><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :username %></span>
+        <%= f.text_field :username %></p><br>
 
-  <%= f.label :position %>
-  <%= f.select :role, ["admin", "staff", "volunteer"] %><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :password %></span>
+        <%= f.text_field :password %></p><br>
 
-  <%= f.label :language %>
-  <%= f.select :language, ["english", "spanish"] %><br>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :position %></span>
+        <%= f.select :role, ["admin", "staff", "volunteer"] %></p><br>
 
-  <%= f.submit "Create Account" %>
-<% end %>
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.label :language %></span>
+        <%= f.select :language, ["english", "spanish"] %></p><br>
+
+    <p class="label">
+      <span class="form-label-left">
+        <%= f.submit "Create Account" %></span></p><br>
+  <% end %>
+</div>

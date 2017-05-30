@@ -25,7 +25,9 @@ RSpec.describe "User visits new event page" do
       fill_in "Password", with: "lemondrop"
       click_button "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Events"
       click_on "Delete"
 
@@ -58,7 +60,9 @@ RSpec.describe "User visits new event page" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Events"
       click_on "Delete"
 

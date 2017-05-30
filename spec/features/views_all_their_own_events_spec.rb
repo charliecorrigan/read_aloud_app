@@ -20,7 +20,7 @@ RSpec.describe "User sees all their events" do
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
 
-      click_on "History"
+      within(".button-list") {  click_on("History") }
 
       expect(current_path).to eq(user_events_path(admin))
       expect(page).to have_content("2016-10-03 Prof. Snape")
@@ -47,7 +47,7 @@ RSpec.describe "User sees all their events" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "History"
+      within(".button-list") {  click_on("History") }
 
       expect(current_path).to eq(user_events_path(staff))
       expect(page).to have_content("2016-10-03 Prof. Snape")
@@ -74,7 +74,7 @@ RSpec.describe "User sees all their events" do
       fill_in "Username", with: volunteer.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "History"
+      within(".button-list") {  click_on("History") }
 
       expect(current_path).to eq(user_events_path(volunteer))
       expect(page).to have_link "2016-10-10 Prof. Snape"

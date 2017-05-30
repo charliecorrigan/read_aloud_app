@@ -1,15 +1,23 @@
-<%= form_for([@user, @event]) do |f| %>
+<div class="stats-form desktop-stuff-box-right">
+  <%= form_for([@user, @event]) do |f| %>
 
-  <%= f.collection_select(:user_classroom_id, @user.user_classrooms, :id, :teacher_name) %>
+    <p class="label">
+    <span class="form-label-left"><%= f.label "Classroom" %></span>
+    <%= f.collection_select(:user_classroom_id, @user.user_classrooms, :id, :teacher_name) %></p><br>
 
-  <%= f.label :date %>
-  <%= f.date_field :date %>
+    <p class="label">
+    <%= f.label :date %>
+    <%= f.date_field :date %></p><br>
 
-  <%= f.label "How many kids" %>
-  <%= f.text_field :kids %>
+    <p class="label">
+    <%= f.label "How many kids" %>
+    <%= f.text_field :kids %></p><br>
 
-  <%= f.label "How many adults" %>
-  <%= f.text_field :adults %>
+    <p class="label">
+    <%= f.label "How many adults" %>
+    <%= f.text_field :adults %></p><br>
 
-  <%= f.submit "Submit" %>
-<% end %>
+    <p class="label">
+    <%= f.submit "Submit" %></p><br>
+  <% end %>
+</div>

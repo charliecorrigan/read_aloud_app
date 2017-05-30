@@ -17,7 +17,9 @@ RSpec.describe "User deletes a classroom" do
       fill_in "Password", with: "lemondrop"
       click_button "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Schools"
       click_on school.name
       within(".classroom") do
@@ -44,7 +46,9 @@ RSpec.describe "User deletes a classroom" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Schools"
       click_on school.name
       within(".classroom") do

@@ -24,7 +24,9 @@ RSpec.describe "user deletes another user" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"
@@ -58,7 +60,9 @@ RSpec.describe "user deletes another user" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"
@@ -92,7 +96,9 @@ RSpec.describe "user deletes another user" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"
@@ -127,7 +133,9 @@ RSpec.describe "user deletes another user" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "Hermione Granger"
 
@@ -161,7 +169,9 @@ RSpec.describe "user deletes another user" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "Hermione Granger"
 
@@ -194,7 +204,9 @@ RSpec.describe "user deletes another user" do
       fill_in "Username", with: staff.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Delete Account"

@@ -1,16 +1,20 @@
-<h1>View all Users</h1>
+<div class="stuff-box">
+  <h2 class="page-title">View All Users</h2>
+</div>
 
-<table>
-  <% @users.each do |user| %>
-  <tr>
-    <th>Name</th>
-    <th>Username</th>
-    <th>Position</th>
-  </tr>
-  <tr>
-    <td><%= link_to "#{user.first_name} #{user.last_name}", user_profiles_path(user) %></td>
-    <td><%= user.username %></td>
-    <td><%= user.role %></td>
-  <tr>
-    <% end %>
-</table>
+<div class="desktop-stuff-box-right-wide">
+  <table>
+    <tr class="label-sm">
+      <th><span class="form-value">Name</span></th>
+      <th><span class="form-value">Username</span></th>
+      <th><span class="form-value">Position</span></th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr class="label-sm">
+      <td><span class="form-value"><%= link_to "#{user.first_name} #{user.last_name}", user_profiles_path(user) %></span></td>
+      <td><span class="form-value"><%= user.username %></span></td>
+      <td><span class="form-value"><%= user.role %></span></td>
+    <tr>
+      <% end %>
+  </table>
+</div>

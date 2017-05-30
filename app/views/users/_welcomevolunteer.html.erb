@@ -1,3 +1,5 @@
-<%= link_to "Read", new_user_event_path(current_user) %>
-<%= link_to "History", user_events_path(current_user) %>
-<%= link_to "Sign Out", logout_path, method: :delete %>
+<ul class="button-list">
+  <li><span class="button button-blue"><%= link_to "Read", new_user_event_path(current_user) %></span></li>
+  <li><span class="button button-blue"><%= link_to "History", user_events_path(current_user) %></span></li>
+  <li><span class="button button-blue"><%= link_to "Sign Out", logout_path, method: :delete %></span></li>
+</ul>

@@ -24,7 +24,9 @@ RSpec.describe "User visits new_user_event page" do
       fill_in "Password", with: "lemondrop"
       click_button "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "Hermione Granger"
       click_on "Create New Event"
@@ -62,7 +64,9 @@ RSpec.describe "User visits new_user_event page" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
       click_on "View All Users"
       click_on "R Hagrid"
       click_on "Create New Event"

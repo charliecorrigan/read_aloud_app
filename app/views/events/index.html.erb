@@ -1,7 +1,14 @@
-<h1>Events Log</h1>
-
-<ul>
-  <% @events.each do |event| %>
-    <li><%= link_to "#{event.date} #{event.user_classroom.teacher_name}", user_event_path(@user, event) %></li>
-  <% end %>
-</ul>
+<div class="stuff-box">
+  <h2 class="page-title">Events Log</h2>
+</div>
+<div class="stats-form desktop-stuff-box-right">
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+        <p class="label">
+          <span class="form-label-left"><%= link_to "#{event.date} #{event.user_classroom.teacher_name}", user_event_path(@user, event) %></span>
+        </p>
+      </li><br>
+    <% end %>
+  </ul>
+</div>
