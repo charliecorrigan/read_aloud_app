@@ -13,7 +13,7 @@ RSpec.describe "Logged in user clicks sign out" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
-      click_on "Sign Out"
+      within(".button-list") {  click_on("Sign Out") }
 
       expect(current_path).to eq(login_path)
       expect(page).to have_button("Sign In")
@@ -33,7 +33,7 @@ RSpec.describe "Logged in user clicks sign out" do
       fill_in "Username", with: staff.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Sign Out"
+      within(".button-list") {  click_on("Sign Out") }
 
       expect(current_path).to eq(login_path)
       expect(page).to have_button("Sign In")
@@ -53,7 +53,7 @@ RSpec.describe "Logged in user clicks sign out" do
       fill_in "Username", with: user.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Sign Out"
+      within(".button-list") {  click_on("Sign Out") }
 
       expect(current_path).to eq(login_path)
       expect(page).to have_button("Sign In")

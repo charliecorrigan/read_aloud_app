@@ -13,7 +13,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
-      click_on "Read"
+      within(".button-list") do
+        click_on("Read")
+      end
 
       expect(current_path).to eq(new_user_event_path(admin))
     end
@@ -29,7 +31,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
-      click_on "History"
+      within(".button-list") do
+        click_on("History")
+      end
 
       expect(current_path).to eq(user_events_path(admin))
     end
@@ -45,7 +49,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
-      click_on "Profile"
+      within(".button-list") do
+        click_on("Profile")
+      end
 
       expect(current_path).to eq(user_profiles_path(admin))
     end
@@ -61,7 +67,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
 
       expect(current_path).to eq(staff_dashboards_path)
     end
@@ -77,7 +85,7 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: admin.username
       fill_in "Password", with: "lemondrop"
       click_on "Sign In"
-      click_on "Sign Out"
+      within(".button-list") {  click_on("Sign Out") }
 
       expect(current_path).to eq(login_path)
     end
@@ -95,7 +103,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: staff.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Read"
+      within(".button-list") do
+        click_on("Read")
+      end
 
       expect(current_path).to eq(new_user_event_path(staff))
     end
@@ -111,7 +121,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: staff.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "History"
+      within(".button-list") do
+        click_on("History")
+      end
 
       expect(current_path).to eq(user_events_path(staff))
     end
@@ -127,7 +139,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: staff.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Profile"
+      within(".button-list") do
+        click_on("Profile")
+      end
 
       expect(current_path).to eq(user_profiles_path(staff))
     end
@@ -143,7 +157,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: staff.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Manage"
+      within(".button-list") do
+        click_on("Manage")
+      end
 
       expect(current_path).to eq(staff_dashboards_path)
     end
@@ -159,7 +175,7 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: staff.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Sign Out"
+      within(".button-list") {  click_on("Sign Out") }
 
       expect(current_path).to eq(login_path)
     end
@@ -177,7 +193,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: volunteer.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Read"
+      within(".button-list") do
+        click_on("Read")
+      end
 
       expect(current_path).to eq(new_user_event_path(volunteer))
     end
@@ -193,7 +211,9 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: volunteer.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "History"
+      within(".button-list") do
+        click_on("History")
+      end
 
       expect(current_path).to eq(user_events_path(volunteer))
     end
@@ -209,7 +229,7 @@ RSpec.describe "User navigates welcome page" do
       fill_in "Username", with: volunteer.username
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
-      click_on "Sign Out"
+      within(".button-list") {  click_on("Sign Out") }
 
       expect(current_path).to eq(login_path)
     end

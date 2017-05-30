@@ -15,7 +15,7 @@ RSpec.describe "User creates new school" do
       fill_in "Password", with: "lemondrop"
       click_button "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do         click_on("Manage")       end
       click_on "Add School"
       fill_in "Name", with: "Hogwarts"
       fill_in "Address", with: "123 Wizard Way"
@@ -42,7 +42,7 @@ RSpec.describe "User creates new school" do
       fill_in "Password", with: "supersecretpassword"
       click_on "Sign In"
 
-      click_on "Manage"
+      within(".button-list") do         click_on("Manage")       end
       click_on "Add School"
       fill_in "Name", with: "Hogwarts"
       fill_in "Address", with: "123 Wizard Way"
