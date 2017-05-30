@@ -1,7 +1,25 @@
-<ul class="menu">
-  <li class="menu"><%= link_to "View All Users", users_path %></li>
-  <li class="menu"><%= link_to "Add Volunteer", new_user_path %></li>
-  <li class="menu"><%= link_to "View All Events", staff_events_path %></li>
-  <li class="menu"><%= link_to "View All Schools", staff_schools_path %></li>
-  <li class="menu"><%= link_to "Add School", new_staff_school_path %></li>
-</ul>
+<div class="stuff-box">
+  <h2 class="page-title">Manage</h2>
+</div>
+
+<img class="dpl-central" src="<%= image_path('storytime.jpg') %>">
+
+<div class="button-list">
+  <ul>
+    <p class="label">
+      <li><span class="button button-blue"><%= link_to "View All Users", users_path %></span></li>
+    </p><br>
+    <p class="label">
+      <li><span class="button button-blue"><%= link_to "Add Volunteer", new_user_path %></span></li>
+    </p><br>
+    <p class="label">
+      <li><span class="button button-blue"><%= link_to "View All Events", staff_events_path %></span></li>
+    </p><br>
+    <p class="label">
+      <li><span class="button button-blue"><%= link_to "View All Schools", staff_schools_path %></span></li>
+    </p><br>
+    <p class="label">
+      <li><span class="button button-blue"><%= link_to "Add School", new_staff_school_path %></span></li>
+    </p><br>
+  </ul>
+</div>
