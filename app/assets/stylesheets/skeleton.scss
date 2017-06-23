@@ -1,0 +1,25 @@
+@media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
+
+  .dpl-logo {
+    width: 100%;
+    display: block;
+    float: left;
+    position: relative;
+    padding: 6%;
+    box-sizing: border-box;
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+  .dpl-logo {
+    width: 40%;
+    display: block;
+    float: left;
+    position: relative;
+    padding: 3%;
+    padding-left: 6%;
+    margin: none;
+    box-sizing: border-box;
+  }
+
+}

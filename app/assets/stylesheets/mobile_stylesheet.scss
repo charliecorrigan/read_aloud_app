@@ -1,0 +1,128 @@
+@media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
+
+
+
+
+  .navbar ul {
+    width: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    padding: 3%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .navbar li {
+    padding: 3%;
+  }
+  .dpl-central {
+    display: none;
+  }
+
+  /*.mobile-greeting {
+    padding: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }*/
+
+  /*.navbar li {
+    list-style: none;
+    display: inline;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .5em;
+    text-transform: uppercase;
+  }
+
+  .navbar a {
+    color:#58585B;
+    text-decoration: none;
+  }
+
+  .navbar a:hover {
+    color:#81B6E3;
+  }
+
+
+  h2 {
+    text-align: left;
+  }
+
+
+  .menu {
+    position: relative;
+    display: block;
+    clear: left;
+    min-width: 100%;
+    margin: 3%;
+  }
+
+  .stuff-box {
+    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+
+
+  .button {
+    display: block;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    margin-bottom: 5%;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .button a {
+    text-decoration: none;
+    color: white;
+    vertical-align: text-bottom;
+  }
+  .button-red {
+    background-color: #D93F24;
+  }
+  .button-yellow {
+    background-color: #FFD401;
+  }
+
+  .button-blue {
+    background-color: #81B6E3;
+  }
+
+  .button-green {
+    background-color: #A4C14E;
+  }
+
+  .button-list {
+    list-style: none;
+    width: 50%;
+    padding: 3%;
+    float: right;
+    box-sizing: border-box;
+  }
+
+  .button-list li {
+    text-align: center;
+  }
+  */
+
+}
