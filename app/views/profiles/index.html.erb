@@ -3,32 +3,22 @@
 </div>
 
 <div class="stats-form wrapper-narrow">
-  <p class="label">
-    <span class="form-label-left">First Name: </span><span class="form-value"><%= @user.first_name %></span>
-  </p><br>
-  
-  <p class="label">
-    <span class="form-label-left">Last Name: </span><span class="form-value"><%= @user.last_name %></span>
-  </p><br>
-  
-  <p class="label">
-    <span class="form-label-left">Username: </span><span class="form-value"><%= @user.username %></span>
-  </p><br>
-  
-  <p class="label">
-    <span class="form-label-left">(link to change password)</span>
-  </p><br>
-
-  <p class="label">
-    <span class="form-label-left">Position: </span><span class="form-value"><%= @user.role %></span>
-  </p><br>
-
-  <p class="label">
-    <span class="form-label-left">Preferred Language: </span><span class="form-value"><%= @user.language %></span>
-  </p><br>
+  <p class="data-display-light">
+    <span class="blue-label">First Name: </span><span class="form-value"><%= @user.first_name %></span>
+  <br>
+    <span class="blue-label">Last Name: </span><span class="form-value"><%= @user.last_name %></span>
+  <br>
+    <span class="blue-label">Username: </span><span class="form-value"><%= @user.username %></span>
+  <br>
+    <span class="blue-label">(link to change password)</span>
+  <br>
+    <span class="blue-label">Position: </span><span class="form-value"><%= @user.role %></span>
+  <br>
+    <span class="blue-label">Preferred Language: </span><span class="form-value"><%= @user.language %></span>
+  <br>
 
   <% if current_user.admin? || (current_user.staff? && @user.volunteer?) || (current_user.staff? && current_user == @user) %>
-    <p class="label">
+    <p class="edit-button">
     <span class="form-label-left"><%= link_to "Edit Profile", edit_user_path(@user) %></span></p><br>
   <% end %>
   <% if current_user.admin? || (current_user.staff? && @user.volunteer?) %>
@@ -42,20 +32,22 @@
 </div>
 
 <div class="wrapper-wide">
-  <table>
-    <tr class="label-sm">
-      <th><span class="form-value">Number of Students Enrolled</span></th>
-      <th><span class="form-value">School</span></th>
-      <th><span class="form-value">Classroom</span></th>
-    </tr>
-  <% @user.classrooms.each do |classroom| %>
-    <tr class="label-sm">
-      <td><span class="form-value"><%= classroom.number_of_students_enrolled %></span></td>
-      <td><span class="form-value"><%= classroom.school.name %></span></td>
-      <td><span class="form-value"><%= "#{classroom.teacher_name}'s #{classroom.grade_level} class" %></span></td>
-    </tr>
-    <% end %>
-  </table><br>
+  <div class="data-table-light">
+    <table>
+      <tr class="label-sm">
+        <th><span class="form-value-color">Students Enrolled</span></th>
+        <th><span class="form-value-color">School</span></th>
+        <th><span class="form-value-color">Classroom</span></th>
+      </tr>
+    <% @user.classrooms.each do |classroom| %>
+      <tr class="label-sm">
+        <td><span class="form-value"><%= classroom.number_of_students_enrolled %></span></td>
+        <td><span class="form-value"><%= classroom.school.name %></span></td>
+        <td><span class="form-value"><%= "#{classroom.teacher_name}'s #{classroom.grade_level} class" %></span></td>
+      </tr>
+      <% end %>
+    </table><br>
+  </div>
 </div>
 
 <div class="assign-classroom">
@@ -70,15 +62,16 @@
 <% end %>
 
   <% if params[:schools] %>
-    <div class="stats-form wrapper-narrow">
+    <div class="stats-form wrapper-narrow school-dropdown">
       <%= form_for(@user_classroom) do |f| %>
       <p class="label">
         <span class="form-label-left">
+          <%= f.label :classroom %>
           <%= f.collection_select(:classroom_id, School.find(params[:schools]).classrooms, :id, :teacher_name) %>
         </span>
-      </p><br>
+      <br>
         <span class="hidden"><%= f.number_field :user_id, :value => @user.id %></span>
-      <p class="label">
+      
         <span class="form-label-left">
           <%= f.submit "Select Classroom" %>
         </span>

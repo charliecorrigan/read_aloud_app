@@ -50,9 +50,42 @@
   font-weight: bold;
 }
 
+.blue-label a {
+  text-decoration: none;
+  color: #81B6E3;
+}
+
+.blue-label {
+  text-align: left;
+  color: #81B6E3;  
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .form-value {
   color: #58585B;
   text-transform: none;
+}
+
+.form-value-color {
+  color: #81B6E3;
+  text-transform: uppercase;
+}
+
+.school-dropdown {
+  #school-label {
+    font-size: 25px;
+    padding-bottom: 3%;
+  }
+
+  input[type=submit] {
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+}
+
+.hidden {
+  display: none;
 }
 // select {
 //     -webkit-appearance: button;
@@ -93,6 +126,11 @@
   .stats-form input[type=submit] {
     width: 97%;
   }
+
+  .form-value-color {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (min-device-width: 768px) {
@@ -103,7 +141,7 @@
 
   .stats-form select {
     font-size: 15px;
-    width: 70%;
+    width: 68%;
   }
 
   .stats-form input[type=submit] {
@@ -116,4 +154,18 @@
     margin-left: 4%;
     margin-right: 0;
   }
+
+  .form-value-color {
+    font-size: 15px;
+  }
+
+  .school-dropdown {
+  #school-label {
+    font-size: 20px;
+  }
+
+  input[type=submit] {
+    padding: 1%;
+  }
+}
 }
