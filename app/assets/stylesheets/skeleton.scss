@@ -21,6 +21,7 @@ h2 {
   border-radius: 5px;
   font-size: 20px;
   line-height: 2;
+  text-align: right;
 }
 
 @media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
@@ -47,6 +48,7 @@ h2 {
   .data-display {
     font-size: 30px;
     margin: 1%;
+    text-align: left;
   }
 
   #top-event-history {
