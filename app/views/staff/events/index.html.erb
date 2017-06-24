@@ -3,30 +3,32 @@
 </div>
 
 <div class="wrapper-wide">
-  <table>
-    <tr class="label-sm">
-      <th><span class="form-value">Event Date</span></th>
-      <th><span class="form-value">Full Name</span></th>
-      <th><span class="form-value">School</span></th>
-      <th><span class="form-value">Teacher</span></th>
-      <th><span class="form-value">Grade Level</span></th>
-      <th><span class="form-value">Kids</span></th>
-      <th><span class="form-value">Adults</span></th>
-      <th><span class="form-value">Edit</span></th>
-      <th><span class="form-value">Delete</span></th>
-    </tr>
-    <% @events.each do |event| %>
-    <tr class="label-sm">
-      <td><span class="form-value"><%= event.date %></span></td>
-      <td><span class="form-value"><%= "#{event.user_classroom.user.first_name} #{event.user_classroom.user.last_name}" %></span></td>
-      <td><span class="form-value"><%= event.user_classroom.classroom.school.name %></span></td>
-      <td><span class="form-value"><%= event.user_classroom.teacher_name %></span></td>
-      <td><span class="form-value"><%= event.user_classroom.classroom.grade_level %></span></td>
-      <td><span class="form-value"><%= event.kids %></span></td>
-      <td><span class="form-value"><%= event.adults %></span></td>
-      <td><span class="form-value"><%= link_to "Edit", edit_user_event_path(event.user_classroom.user, event) %></span></td>
-      <td><span class="form-value"><%= link_to "Delete", staff_event_path(event), method: :delete %></span></td>
-    </tr>
-    <% end %>
-  </table>
+  <div class="data-table-light">
+    <table>
+      <tr class="label-sm">
+        <th><span class="form-value">Event Date</span></th>
+        <th><span class="form-value">Full Name</span></th>
+        <th><span class="form-value">School</span></th>
+        <th><span class="form-value">Teacher</span></th>
+        <th><span class="form-value">Grade Level</span></th>
+        <th><span class="form-value">Kids</span></th>
+        <th><span class="form-value">Adults</span></th>
+        <th><span class="form-value">Edit</span></th>
+        <th><span class="form-value">Delete</span></th>
+      </tr>
+      <% @events.each do |event| %>
+      <tr class="label-sm">
+        <td><span class="form-value staff-event-index-table"><%= event.date %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= "#{event.user_classroom.user.first_name} #{event.user_classroom.user.last_name}" %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= event.user_classroom.classroom.school.name %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= event.user_classroom.teacher_name %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= event.user_classroom.classroom.grade_level %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= event.kids %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= event.adults %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= link_to "Edit", edit_user_event_path(event.user_classroom.user, event) %></span></td>
+        <td><span class="form-value staff-event-index-table"><%= link_to "Delete", staff_event_path(event), method: :delete %></span></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
