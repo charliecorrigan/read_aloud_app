@@ -3,14 +3,16 @@
 </div>
 
 <div class="wrapper-wide">
-  <table>
-    <% @schools.each do |school| %>
-      <tr class="label-sm">
-        <td><span class="form-value"><%= link_to school.name, staff_school_path(school) %></span></td>
-        <td><span class="form-value"><%= school.address %></span></td>
-        <td><span class="form-value"><%= link_to "Edit", edit_staff_school_path(school) %></span></td>
-        <td><span class="form-value"><%= link_to "Delete", staff_school_path(school), method: :delete %></span></td>
-      </tr>
-    <% end %>
-  </table>
+  <div class="data-table-light">
+    <table>
+      <% @schools.each do |school| %>
+        <tr class="label-sm">
+          <td><span class="form-value"><%= link_to school.name, staff_school_path(school) %></span></td>
+          <td><span class="form-value"><%= school.address %></span></td>
+          <td><span class="form-value"><%= link_to "Edit", edit_staff_school_path(school) %></span></td>
+          <td><span class="form-value"><%= link_to "Delete", staff_school_path(school), method: :delete %></span></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
