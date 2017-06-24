@@ -43,6 +43,17 @@
   color: white;
 }
 
+.form-label-left {
+  text-align: left;
+  color: white;  
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.form-value {
+  color: #58585B;
+  text-transform: none;
+}
 // select {
 //     -webkit-appearance: button;
 //     -moz-appearance: button;
@@ -97,5 +108,12 @@
 
   .stats-form input[type=submit] {
     width: 30%;
+  }
+
+  .label {
+    padding-left: 12%;
+    padding-right: 12%;
+    margin-left: 4%;
+    margin-right: 0;
   }
 }

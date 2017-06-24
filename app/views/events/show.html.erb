@@ -1,18 +1,18 @@
 <div class="stats-form wrapper-narrow">
-<p class="label">
+<p class="data-display" id="top-event-history">
   <span class="form-label-left">Event Date: </span><span class="form-value"><%= @event.date %></span></p><br>
-<p class="label">
+<p class="data-display">
   <span class="form-label-left">School: </span><span class="form-value"><%= @event.user_classroom.classroom.school.name %></span></p><br>
-<p class="label">
+<p class="data-display">
   <span class="form-label-left">Teacher: </span><span class="form-value"><%= @event.user_classroom.teacher_name %></span></p><br>
-<p class="label">
+<p class="data-display">
   <span class="form-label-left">Grade: </span><span class="form-value"><%= @event.user_classroom.classroom.grade_level %></span></p><br>
-<p class="label">
+<p class="data-display">
   <span class="form-label-left">Kids present: </span><span class="form-value"><%= @event.kids %></span></p><br>
-<p class="label">
+<p class="data-display">
   <span class="form-label-left">Adults present: </span><span class="form-value"><%= @event.adults %></span></p><br>
-<p class="label">
+<p class="data-display">
   <span class="form-label-left"><%= link_to "Edit", edit_user_event_path(@user, @event) %></span></p><br>
-<p class="label">
+<p class="data-display">
   <span class="form-label-left"><%= link_to "Delete", user_event_path(@user, @event), method: :delete %></span></p><br>
 </div>

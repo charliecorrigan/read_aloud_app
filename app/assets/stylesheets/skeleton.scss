@@ -14,6 +14,15 @@ h2 {
   padding-right: 3%;
 }
 
+.data-display {
+  background-color: #81B6E3;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 2;
+}
+
 @media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
 
   .dpl-logo {
@@ -33,6 +42,15 @@ h2 {
 
   .wrapper-narrow {
     padding: 3%;
+  }
+
+  .data-display {
+    font-size: 30px;
+    margin: 1%;
+  }
+
+  #top-event-history {
+    margin-top: 20%;
   }
 }
 
