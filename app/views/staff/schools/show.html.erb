@@ -3,18 +3,18 @@
 </div>
 
 <div class="stats-form wrapper-narrow">
-  <p class="label">
-    <span class="form-label-left">School: </span><span class="form-value"><%= @school.name %></span>
-  </p><br>
-  <p class="label">
-    <span class="form-label-left">Address: </span><span class="form-value"><%= @school.address %></span>
-  </p><br>  
-  <p class="label">
-    <span class="form-label-left"><%= link_to "Edit School Info", edit_staff_school_path(@school) %></span>
-  </p><br>
-  <p class="label">
-    <span class="form-label-left"><%= link_to "Delete This School", staff_school_path(@school), method: :delete %></span>
-  </p><br>
+    <p class="label">
+      <span class="form-label-left">School: </span><span class="form-value"><%= @school.name %></span>
+    </p><br>
+    <p class="label">
+      <span class="form-label-left">Address: </span><span class="form-value"><%= @school.address %></span>
+    </p><br>  
+    <p class="label">
+      <span class="form-label-left"><%= link_to "Edit School Info", edit_staff_school_path(@school) %></span>
+    </p><br>
+    <p class="label">
+      <span class="form-label-left"><%= link_to "Delete This School", staff_school_path(@school), method: :delete %></span>
+    </p><br>
 </div>
 
 <div class="stuff-box">
@@ -22,30 +22,32 @@
 </div>
 
 <div class="wrapper-wide">
-  <table class="classroom">
-    <tr class="label-sm">
-      <th><span class="form-value">Number of Students Enrolled</span></th>
-      <th><span class="form-value">Grade Level</span></th>
-      <th><span class="form-value">Teacher Name</span></th>
-      <th><span class="form-value">Assigned Readers</span></th>
-    </tr>
-    <% @school.classrooms.each do |classroom| %>
-    <tr class="label-sm">
-      <td><span class="form-value"><%= classroom.number_of_students_enrolled %></span></td>
-      <td><span class="form-value"><%= classroom.grade_level %></span></td>
-      <td><span class="form-value"><%= classroom.teacher_name %></span></td>
-      <td><span class="form-value">
-        <ul>
-          <% classroom.users.each do |user| %>
-            <li><%= "#{user.first_name} #{user.last_name}" %></li>
-          <% end %>
-        </ul>
-      </span></td>
-      <td><span class="form-value"><%= link_to "Edit", edit_staff_classroom_path(classroom) %></span></td>
-      <td><span class="form-value"><%= link_to "Delete", staff_classroom_path(classroom), method: :delete %></span></td>
-    </tr>
-    <% end %>
-  </table>
+  <div class="data-table-light">
+    <table class="classroom">
+      <tr class="label-sm">
+        <th><span class="form-value-color">Number of Students Enrolled</span></th>
+        <th><span class="form-value-color">Grade Level</span></th>
+        <th><span class="form-value-color">Teacher Name</span></th>
+        <th><span class="form-value-color">Assigned Readers</span></th>
+      </tr>
+      <% @school.classrooms.each do |classroom| %>
+      <tr class="label-sm">
+        <td><span class="form-value"><%= classroom.number_of_students_enrolled %></span></td>
+        <td><span class="form-value"><%= classroom.grade_level %></span></td>
+        <td><span class="form-value"><%= classroom.teacher_name %></span></td>
+        <td><span class="form-value">
+          <ul>
+            <% classroom.users.each do |user| %>
+              <li><%= "#{user.first_name} #{user.last_name}" %></li>
+            <% end %>
+          </ul>
+        </span></td>
+        <td><span class="form-value"><%= link_to "Edit", edit_staff_classroom_path(classroom) %></span></td>
+        <td><span class="form-value"><%= link_to "Delete", staff_classroom_path(classroom), method: :delete %></span></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
 
 <div class="stats-form wrapper-narrow">
