@@ -10,7 +10,7 @@
 
   <body>
     <% if session[:user_id]%>
-      <header><img class="dpl-logo navbar" src="<%= image_path('DPL_horiz_2color.jpg') %>"></header>
+      <header><img class="dpl-logo" src="<%= image_path('DPL_horiz_2color.jpg') %>"></header>
       <%= render partial: "layouts/navbar_#{current_user.role}" %>
     <% end %>
     <%= flash[:sign_in_error] %>

@@ -1,36 +1,5 @@
 @media only screen and (min-device-width: 768px) {
 
-  .navbar ul {
-    width: 60%;
-    display: block;
-    float: left;
-    position: relative;
-    padding-top: 4%;
-    padding-bottom: 3%;
-    padding-right: 3%;
-    text-align: right;
-    box-sizing: border-box;
-  }
-
-  .navbar li {
-    list-style: none;
-    display: inline;
-    padding-left: 2%;
-    padding-right: 2%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.25em;
-    text-transform: uppercase;
-  }
-
-  .navbar a {
-    color:#58585B;
-    text-decoration: none;
-  }
-
-  .navbar a:hover {
-    color:#81B6E3;
-  }
-
   h2 {
     text-align: center;
   }

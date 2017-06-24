@@ -8,3 +8,15 @@
     <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
   </ul>
 </nav>
+
+<div class="navbar-dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    <%= link_to "Home", user_path(current_user) %>
+    <%= link_to "Read", new_user_event_path(current_user) %>
+    <%= link_to "Profile", user_profiles_path(current_user) %>
+    <%= link_to "History", user_events_path(current_user) %>
+    <%= link_to "Manage", staff_dashboards_path %>
+    <%= link_to "Sign Out", logout_path, method: :delete %>
+  </div>
+</div>
