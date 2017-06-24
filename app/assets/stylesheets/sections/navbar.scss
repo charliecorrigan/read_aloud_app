@@ -4,7 +4,7 @@
   }
 
   img.dpl-logo {
-    width: 88%;
+    width: 83%;
   }
 
   .dropbtn {
@@ -13,7 +13,8 @@
       padding: 16px;
       padding-top: 30px;
       padding-bottom: 30px;
-      font-size: 16px;
+      font-size: 25px;
+      text-transform: uppercase;
       border: none;
       cursor: pointer;
   }
@@ -24,7 +25,7 @@
       float: left;
       margin-top: 6%;
       margin-bottom: 6%;
-      margin-right: 3%;
+      padding-right: 6%;
   }
 
   .dropdown-content {
@@ -34,6 +35,8 @@
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
+      font-size: 25px;
+      font-family: Arial, Helvetica, sans-serif
   }
 
   .dropdown-content a {
