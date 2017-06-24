@@ -1,3 +1,20 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+.page-title {
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+  color: #58585B;
+  padding-right: 3%;
+}
+
+
 @media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
 
   .dpl-logo {
@@ -7,6 +24,12 @@
     position: relative;
     padding: 6%;
     box-sizing: border-box;
+  }
+
+  .page-title {
+    font-size: 50px;
+    padding: 6%;
+    text-align: center;
   }
 }
 
@@ -21,5 +44,20 @@
     margin: none;
     box-sizing: border-box;
   }
+
+  .stuff-box {
+    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+   
 
 }

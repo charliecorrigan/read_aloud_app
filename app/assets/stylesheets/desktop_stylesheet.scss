@@ -1,9 +1,5 @@
 @media only screen and (min-device-width: 768px) {
 
-  h2 {
-    text-align: center;
-  }
-
   .greeting {
     width: 100%;
     margin-left: auto;
@@ -20,50 +16,11 @@
     margin: 3%;
   }
 
-  .stuff-box {
-    max-width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 3%;
-    padding-right: 3%;
-  }
 
-  .dpl-central {
-    display: block;
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    padding-right: 3%;
-    padding-left: 3%;
-    padding-top: 3%;
-  }
 
-  .button {
-    display: block;
-    border-radius: 5px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.25em;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    margin-bottom: 5%;
-    text-align: center;
-    box-sizing: border-box;
-    width: 100%;
-  }
 
-  .button a {
-    text-decoration: none;
-    color: white;
-    vertical-align: text-bottom;
-  }
+
+  
   .button-red {
     background-color: #D93F24;
   }
@@ -71,26 +28,13 @@
     background-color: #FFD401;
   }
 
-  .button-blue {
-    background-color: #81B6E3;
-  }
+  
 
   .button-green {
     background-color: #A4C14E;
   }
 
-  .button-list {
-    list-style: none;
-    width: 50%;
-    padding: 3%;
-    float: right;
-    box-sizing: border-box;
-  }
-
-  .button-list li {
-    text-align: center;
-  }
-
+  
   .stats-form .label {
       font-family: Arial, Helvetica, sans-serif;
       font-size: .75em;
@@ -164,12 +108,6 @@
       padding-bottom: 2px;
       text-overflow: ellipsis;
       white-space: nowrap;
-  }
-
-  .page-title {
-    text-align: right;
-    color: #58585B;
-    padding-right: 1%;
   }
 
   .form-value {
