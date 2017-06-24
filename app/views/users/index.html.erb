@@ -3,18 +3,20 @@
 </div>
 
 <div class="wrapper-wide">
-  <table>
-    <tr class="label-sm">
-      <th><span class="form-value">Name</span></th>
-      <th><span class="form-value">Username</span></th>
-      <th><span class="form-value">Position</span></th>
-    </tr>
-    <% @users.each do |user| %>
-    <tr class="label-sm">
-      <td><span class="form-value"><%= link_to "#{user.first_name} #{user.last_name}", user_profiles_path(user) %></span></td>
-      <td><span class="form-value"><%= user.username %></span></td>
-      <td><span class="form-value"><%= user.role %></span></td>
-    <tr>
-      <% end %>
-  </table>
+  <div class="data-table-light">
+    <table>
+      <tr class="label-sm">
+        <th><span class="form-value-color">Name</span></th>
+        <th><span class="form-value-color">Username</span></th>
+        <th><span class="form-value-color">Position</span></th>
+      </tr>
+      <% @users.each do |user| %>
+      <tr class="label-sm">
+        <td><span class="form-value"><%= link_to "#{user.first_name} #{user.last_name}", user_profiles_path(user) %></span></td>
+        <td><span class="form-value"><%= user.username %></span></td>
+        <td><span class="form-value"><%= user.role %></span></td>
+      <tr>
+        <% end %>
+    </table>
+  </div>
 </div>
