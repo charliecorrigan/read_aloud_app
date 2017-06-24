@@ -1,0 +1,63 @@
+.button {
+  display: block;
+  border-radius: 5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  margin-bottom: 5%;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.button a {
+  text-decoration: none;
+  color: white;
+  vertical-align: text-bottom;
+}
+
+.button-blue {
+  background-color: #81B6E3;
+}
+
+.button-list {
+  list-style: none;
+  padding: 3%;
+  box-sizing: border-box;
+}
+
+.button-list li {
+  text-align: center;
+}
+
+@media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
+  .button-list {
+    display: block;
+    clear: right;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button-list li {
+    margin-bottom: 8%;
+  }
+
+  .button {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+  .button-list {
+    width: 50%;
+    float: right;
+  }
+
+  .button {
+    font-size: 30px;
+  }
+}

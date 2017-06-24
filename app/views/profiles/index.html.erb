@@ -2,7 +2,7 @@
   <h2 class="page-title">Profile</h2>
 </div>
 
-<div class="stats-form desktop-stuff-box-right">
+<div class="stats-form wrapper-narrow">
   <p class="label">
     <span class="form-label-left">First Name: </span><span class="form-value"><%= @user.first_name %></span>
   </p><br>
@@ -41,7 +41,7 @@
   <h2 class="page-title">Classrooms</h2>
 </div>
 
-<div class="desktop-stuff-box-right-wide">
+<div class="wrapper-wide">
   <table>
     <tr class="label-sm">
       <th><span class="form-value">Number of Students Enrolled</span></th>
@@ -70,7 +70,7 @@
 <% end %>
 
   <% if params[:schools] %>
-    <div class="stats-form desktop-stuff-box-right">
+    <div class="stats-form wrapper-narrow">
       <%= form_for(@user_classroom) do |f| %>
       <p class="label">
         <span class="form-label-left">
@@ -93,7 +93,7 @@
   <h2 class="page-title">Events</h2>
 </div>
 
-<div class="stats-form desktop-stuff-box-right">
+<div class="stats-form wrapper-narrow">
   <p class="label">
     <span class="form-label-left">
       <%= link_to "User Event History", user_events_path(@user) %>

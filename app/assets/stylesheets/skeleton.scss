@@ -14,7 +14,6 @@ h2 {
   padding-right: 3%;
 }
 
-
 @media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
 
   .dpl-logo {
@@ -31,6 +30,10 @@ h2 {
     padding: 6%;
     text-align: center;
   }
+
+  .wrapper-narrow {
+    padding: 3%;
+  }
 }
 
 @media only screen and (min-device-width: 768px) {
@@ -45,6 +48,9 @@ h2 {
     box-sizing: border-box;
   }
 
+/*////////////////////////////////////
+              DESKTOP WRAPPERS
+*/////////////////////////////////////
   .stuff-box {
     max-width: 100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -58,6 +64,18 @@ h2 {
     padding-right: 3%;
   }
 
-   
-
+  .wrapper-narrow {
+    clear: left;
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: white;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: auto;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
 }
