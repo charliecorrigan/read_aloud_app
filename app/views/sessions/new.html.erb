@@ -1,11 +1,13 @@
-<div class="login-form">
-<%= form_for(:session, url: login_path) do |f| %>
-  <span class="label"><%= f.label :username %></span>
-  <%= f.text_field :username %><br>
+<div class="login">
+  <img class="dpl-logo-login" src="<%= image_path('DPL_horiz_2color.jpg') %>">
+  <div class="login-form">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <span class="label"><%= f.label :username %></span>
+      <%= f.text_field :username %><br>
 
-  <span class="label"><%= f.label :password %></span>
-  <%= f.password_field :password %>
+      <span class="label"><%= f.label :password %></span>
+      <%= f.password_field :password %><br>
 
-  <%= f.submit "Sign In" %>
-<% end %>
+      <%= f.submit "Sign In" %>
+    <% end %>
 </div>

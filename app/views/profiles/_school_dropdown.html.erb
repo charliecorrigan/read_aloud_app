@@ -1,7 +1,7 @@
-<div class="stats-form desktop-stuff-box-right-wide">
+<div class="stats-form wrapper-wide school-dropdown">
   <form action="/users/<%= @user.id %>/profiles" method="get">
     <p class="label">
-      <span class="form-label-left">Select School: </span>
+      <span class="form-label-left" id="school-label">Select School: </span>
       <select name="schools">
         <% School.all.each do |school| %>
           <option value="<%= school.id %>"><%= school.name %></option>

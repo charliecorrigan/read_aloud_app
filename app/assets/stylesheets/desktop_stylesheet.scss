@@ -1,0 +1,39 @@
+@media only screen and (min-device-width: 768px) {
+
+  .greeting {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: left;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .menu {
+    position: relative;
+    display: block;
+    clear: left;
+    min-width: 100%;
+    margin: 3%;
+  }
+
+  .button-red {
+    background-color: #D93F24;
+  }
+  .button-yellow {
+    background-color: #FFD401;
+  }
+
+  .button-green {
+    background-color: #A4C14E;
+  }
+
+  .label th, td {
+    font-size: .75em;
+    padding: 2%;
+  }
+
+
+
+
+
+}

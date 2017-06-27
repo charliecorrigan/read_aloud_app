@@ -1,0 +1,104 @@
+.login {
+  clear: left;
+  text-align: left;
+  border: 1px solid #AAA;
+  border-radius: 20px;
+  width: 90%;
+  padding: 8%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+}
+
+.dpl-logo-login {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.login-form {
+  margin-top: 6%;
+  font-size: 50px;
+  line-height: 1.5;
+
+  .label {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 5px;
+    padding: 1%;
+    background-color: #81B6E3;
+    border-radius: 10px;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  input {
+    font-size: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 12%;
+    padding: 1%;
+    border: 1px solid, #F5F5F5;
+    border-radius: 4px;
+    height: 70px;
+    width: 90%;
+    box-sizing: border-box;
+  }
+  input[type=submit] {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    font-size: 40px;
+    height: 100px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+
+  .login {
+    width: 80%;
+  }
+
+  .login-form {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+
+    input {
+      height: 40px;
+      width: 40%;
+      margin-bottom: 3%;
+    }
+
+    input[type=text] {
+      font-size: 20px;
+    }
+
+    input[type=submit] {
+      font-size: 20px;
+      width: 90%;
+      height: 40px;
+      margin-top: 3%;
+    }
+    .label {
+      padding-left: 12%;
+      padding-right: 12%;
+      margin-left: 4%;
+      margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1258px) {
+
+  .login {
+    width: 60%;
+  }
+}

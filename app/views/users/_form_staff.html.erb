@@ -1,32 +1,32 @@
-<div class="stats-form desktop-stuff-box-right">
+<div class="stats-form wrapper-narrow">
   <%= form_for(@user) do |f| %>
     
     <p class="label">
       <span class="form-label-left">
         <%= f.label :first_name %></span>
-        <%= f.text_field :first_name %></p><br>
+        <%= f.text_field :first_name %></p>
     <p class="label">
       <span class="form-label-left">
         <%= f.label :last_name %></span>
-        <%= f.text_field :last_name %></p><br>
+        <%= f.text_field :last_name %></p>
 
     <p class="label">
       <span class="form-label-left">
         <%= f.label :username %></span>
-        <%= f.text_field :username %></p><br>
+        <%= f.text_field :username %></p>
 
     <p class="label">
       <span class="form-label-left">
         <%= f.label :password %></span>
-        <%= f.text_field :password %></p><br>
+        <%= f.text_field :password %></p>
 
     <p class="label">
       <span class="form-label-left">
         <%= f.label :language %></span>
-        <%= f.select :language, ["english", "spanish"] %></p><br>
+        <%= f.select :language, ["english", "spanish"] %></p>
 
     <p class="label">
       <span class="form-label-left">
-        <%= f.submit "Create Account" %></span></p><br>
+        <%= f.submit "Create Account" %></span></p>
   <% end %>
 </div>
