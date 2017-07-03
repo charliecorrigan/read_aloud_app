@@ -42,6 +42,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'database_cleaner'
   gem 'nyan-cat-formatter'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :development do
