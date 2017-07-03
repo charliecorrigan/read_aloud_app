@@ -1,0 +1,783 @@
+/*////////////////////////////////////
+              CSS RESET
+*/
+/* line 4, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/base.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 25, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/base.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 29, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/base.scss */
+body {
+  line-height: 1;
+}
+
+/* line 32, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/base.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 35, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/base.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 38, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/base.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 43, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/base.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* line 5, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+h2 {
+  text-align: center;
+}
+
+/* line 9, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+table {
+  width: 100%;
+  text-align: right;
+}
+
+/* line 14, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+.page-title {
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+  color: #58585B;
+  padding-right: 3%;
+}
+
+/* line 22, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+.data-display {
+  background-color: #81B6E3;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 2;
+  text-align: right;
+}
+
+/* line 32, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+.data-display-light {
+  border: 1px solid #81B6E3;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 2;
+  text-align: right;
+}
+
+/* line 42, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+.data-table-light {
+  border: 1px solid #81B6E3;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+/* line 48, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+.label-sm th, td, tr {
+  font-size: 20px;
+  padding: 1%;
+}
+/* line 51, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+.label-sm th th, td th, tr th {
+  color: #81B6E3;
+}
+/* line 54, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+.label-sm th .staff-event-index-table, td .staff-event-index-table, tr .staff-event-index-table {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+@media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
+  /* line 62, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .dpl-logo {
+    width: 100%;
+    display: block;
+    float: left;
+    position: relative;
+    padding: 6%;
+    box-sizing: border-box;
+  }
+
+  /* line 71, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .page-title {
+    font-size: 50px;
+    padding: 6%;
+    text-align: center;
+  }
+
+  /* line 77, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .wrapper-narrow {
+    padding: 3%;
+  }
+
+  /* line 81, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .wrapper-wide {
+    padding: 3%;
+  }
+
+  /* line 85, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .data-display {
+    font-size: 30px;
+    margin: 1%;
+    text-align: left;
+  }
+
+  /* line 91, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  #top-event-history {
+    margin-top: 20%;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 97, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .dpl-logo {
+    width: 40%;
+    display: block;
+    float: left;
+    position: relative;
+    padding: 3%;
+    padding-left: 6%;
+    margin: none;
+    box-sizing: border-box;
+  }
+
+  /* line 108, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .label-sm td {
+    padding: 1%;
+  }
+
+  /*////////////////////////////////////
+                DESKTOP WRAPPERS
+  */
+  /* line 114, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .stuff-box {
+    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  /* line 127, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .wrapper-narrow {
+    clear: left;
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: white;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: auto;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  /* line 142, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/skeleton.scss */
+  .wrapper-wide {
+    clear: left;
+    width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: white;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: auto;
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+/* line 1, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+.button {
+  display: block;
+  border-radius: 5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  margin-bottom: 5%;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* line 16, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+.button a {
+  text-decoration: none;
+  color: white;
+  vertical-align: text-bottom;
+}
+
+/* line 22, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+.button-blue {
+  background-color: #81B6E3;
+}
+
+/* line 26, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+.button-list {
+  list-style: none;
+  padding: 3%;
+  box-sizing: border-box;
+}
+
+/* line 32, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+.button-list li {
+  text-align: center;
+}
+
+/* line 36, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+.edit-button {
+  font-size: 30px;
+  background-color: #81B6E3;
+  text-align: center;
+  border-radius: 5px;
+  line-height: 1.5;
+}
+
+@media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
+  /* line 45, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+  .button-list {
+    display: block;
+    clear: right;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 53, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+  .button-list li {
+    margin-bottom: 8%;
+  }
+
+  /* line 57, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+  .button {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 63, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+  .button-list {
+    width: 50%;
+    float: right;
+  }
+
+  /* line 68, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/buttons.scss */
+  .button {
+    font-size: 30px;
+  }
+}
+/* line 1, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.stats-form .label {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  padding: 1%;
+  background-color: #81B6E3;
+  border-radius: 10px;
+  margin-bottom: 3%;
+}
+
+/* line 12, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.stats-form input {
+  padding: 2%;
+  margin-left: 2%;
+  text: inherit;
+  border: 1px solid, #F5F5F5;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .75em;
+  font-weight: bold;
+  color: #58585B;
+}
+
+/* line 24, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.stats-form select {
+  font-size: 30px;
+  padding: 2%;
+  border: 1px solid, #F5F5F5;
+  border-radius: 4px;
+  width: 600px;
+  margin-left: 2%;
+}
+
+/* line 33, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.stats-form input[type=date] {
+  width: 80%;
+}
+
+/* line 37, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.stats-form input[type=text] {
+  width: 45%;
+}
+
+/* line 41, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.form-label-left a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 46, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.form-label-left {
+  text-align: left;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* line 53, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+#event-index {
+  font-weight: normal;
+}
+
+/* line 56, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.blue-label a {
+  text-decoration: none;
+  color: #81B6E3;
+}
+
+/* line 61, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.blue-label {
+  text-align: left;
+  color: #81B6E3;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* line 68, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.form-value {
+  color: #58585B;
+  text-transform: none;
+}
+
+/* line 73, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.form-value a {
+  text-decoration: none;
+  color: #81B6E3;
+}
+
+/* line 78, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.form-value-color {
+  color: #81B6E3;
+  text-transform: uppercase;
+}
+
+/* line 84, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.school-dropdown #school-label {
+  font-size: 25px;
+  padding-bottom: 3%;
+}
+/* line 89, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.school-dropdown input[type=submit] {
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+/* line 95, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
+  /* line 124, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .stats-form .label {
+    font-size: 40px;
+    text-align: left;
+  }
+
+  /* line 129, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .stats-form select {
+    font-size: 30px;
+    width: 600px;
+  }
+
+  /* line 134, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .stats-form input[type=submit] {
+    width: 97%;
+  }
+
+  /* line 138, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .form-value-color {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 145, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .stats-form .label {
+    font-size: .75em;
+    text-align: right;
+  }
+
+  /* line 150, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .stats-form select {
+    font-size: 15px;
+    width: 68%;
+  }
+
+  /* line 155, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .stats-form input[type=submit] {
+    width: 30%;
+  }
+
+  /* line 159, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .label {
+    padding-left: 12%;
+    padding-right: 12%;
+    margin-left: 4%;
+    margin-right: 0;
+  }
+
+  /* line 166, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .form-value-color {
+    font-size: 15px;
+  }
+
+  /* line 171, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .school-dropdown #school-label {
+    font-size: 20px;
+  }
+  /* line 175, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/forms.scss */
+  .school-dropdown input[type=submit] {
+    padding: 1%;
+  }
+}
+/* line 1, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+.login {
+  clear: left;
+  text-align: left;
+  border: 1px solid #AAA;
+  border-radius: 20px;
+  width: 90%;
+  padding: 8%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+}
+
+/* line 14, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+.dpl-logo-login {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* line 21, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+.login-form {
+  margin-top: 6%;
+  font-size: 50px;
+  line-height: 1.5;
+}
+/* line 26, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+.login-form .label {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 5px;
+  padding: 1%;
+  background-color: #81B6E3;
+  border-radius: 10px;
+  padding-left: 25%;
+  padding-right: 25%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* line 42, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+.login-form input {
+  font-size: 40px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 12%;
+  padding: 1%;
+  border: 1px solid, #F5F5F5;
+  border-radius: 4px;
+  height: 70px;
+  width: 90%;
+  box-sizing: border-box;
+}
+/* line 54, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+.login-form input[type=submit] {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  font-size: 40px;
+  height: 100px;
+}
+
+@media only screen and (min-device-width: 768px) {
+  /* line 65, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+  .login {
+    width: 80%;
+  }
+
+  /* line 69, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+  .login-form {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  /* line 74, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+  .login-form input {
+    height: 40px;
+    width: 40%;
+    margin-bottom: 3%;
+  }
+  /* line 80, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+  .login-form input[type=text] {
+    font-size: 20px;
+  }
+  /* line 84, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+  .login-form input[type=submit] {
+    font-size: 20px;
+    width: 90%;
+    height: 40px;
+    margin-top: 3%;
+  }
+  /* line 90, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+  .login-form .label {
+    padding-left: 12%;
+    padding-right: 12%;
+    margin-left: 4%;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 1258px) {
+  /* line 101, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/login.scss */
+  .login {
+    width: 60%;
+  }
+}
+@media only screen and (max-device-width: 767px) {
+  /* line 2, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar {
+    display: none;
+  }
+
+  /* line 6, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  img.dpl-logo {
+    width: 83%;
+  }
+
+  /* line 10, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .dropbtn {
+    background-color: #81B6E3;
+    color: white;
+    padding: 16px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* line 22, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar-dropdown {
+    position: relative;
+    display: block;
+    float: left;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    padding-right: 6%;
+  }
+
+  /* line 31, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* line 42, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* line 49, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* line 51, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* line 55, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar-dropdown:hover .dropbtn {
+    background-color: #81B6E3;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 61, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar-dropdown {
+    display: none;
+  }
+
+  /* line 65, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  img.dpl-logo {
+    width: 45%;
+  }
+
+  /* line 69, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar {
+    width: 50%;
+    float: left;
+    padding-top: 3%;
+    font-size: 12px;
+  }
+
+  /* line 76, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar ul {
+    width: 100%;
+    display: block;
+    float: left;
+    position: relative;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    padding-right: 3%;
+    text-align: right;
+    box-sizing: border-box;
+  }
+
+  /* line 88, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar li {
+    list-style: none;
+    display: inline;
+    padding-left: 4%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    text-transform: uppercase;
+  }
+
+  /* line 97, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar a {
+    color: #58585B;
+    text-decoration: none;
+  }
+
+  /* line 102, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/navbar.scss */
+  .navbar a:hover {
+    color: #81B6E3;
+  }
+}
+@media only screen and (min-device-width: 100px) and (max-device-width: 767px) {
+  /* line 2, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/user_home.scss */
+  .dpl-central {
+    display: none;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 8, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/sections/user_home.scss */
+  .dpl-central {
+    display: block;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 3%;
+    padding-left: 3%;
+    padding-top: 3%;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 3, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .greeting {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: left;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  /* line 11, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .menu {
+    position: relative;
+    display: block;
+    clear: left;
+    min-width: 100%;
+    margin: 3%;
+  }
+
+  /* line 19, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .button-red {
+    background-color: #D93F24;
+  }
+
+  /* line 22, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .button-yellow {
+    background-color: #FFD401;
+  }
+
+  /* line 26, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .button-green {
+    background-color: #A4C14E;
+  }
+
+  /* line 30, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .label th, td {
+    font-size: .75em;
+    padding: 2%;
+  }
+}
