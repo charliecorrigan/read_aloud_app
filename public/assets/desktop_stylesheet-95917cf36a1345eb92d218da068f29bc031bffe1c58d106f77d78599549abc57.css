@@ -1,0 +1,41 @@
+@media only screen and (min-device-width: 768px) {
+  /* line 3, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .greeting {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: left;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  /* line 11, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .menu {
+    position: relative;
+    display: block;
+    clear: left;
+    min-width: 100%;
+    margin: 3%;
+  }
+
+  /* line 19, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .button-red {
+    background-color: #D93F24;
+  }
+
+  /* line 22, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .button-yellow {
+    background-color: #FFD401;
+  }
+
+  /* line 26, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .button-green {
+    background-color: #A4C14E;
+  }
+
+  /* line 30, /Users/ccorrigan/turing/2module/read_aloud_app/app/assets/stylesheets/desktop_stylesheet.scss */
+  .label th, td {
+    font-size: .75em;
+    padding: 2%;
+  }
+}
